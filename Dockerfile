@@ -7,7 +7,7 @@ RUN apt install tzdata -y
 RUN ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
-RUN apt install git python3 -y
+RUN apt install sudo git python3 -y
 
 RUN useradd test
 RUN echo 'test:test' | chpasswd
