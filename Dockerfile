@@ -21,4 +21,4 @@ USER test
 
 COPY / /home/test/dotfiles
 
-ENTRYPOINT  [ "/usr/bin/fish" ]
+ENTRYPOINT  [ "/bin/bash" ]
