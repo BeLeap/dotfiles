@@ -9,7 +9,7 @@ RUN ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 RUN apt upgrade -y
 
-RUN apt install sudo git python3 fish -y
+RUN apt install sudo git curl python3 fish -y
 
 RUN useradd test
 RUN echo 'test:test' | chpasswd
@@ -18,7 +18,8 @@ RUN mkdir /home/test
 RUN chown test /home/test
 
 USER test
-
 COPY / /home/test/dotfiles
+
+WORKDIR /home/test/dotfiles
 
 ENTRYPOINT  [ "/bin/bash" ]
