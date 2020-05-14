@@ -1,6 +1,11 @@
-alias v "vim"
+function v
+    nvim $argv
+end
+function vim
+    nvim $argv
+end
 function vs
-    vim src/"$argv"
+    vim src/$argv
 end
 
 function vm
@@ -11,69 +16,81 @@ function c..
     cd ../
 end
 
-function vimrc 
+function vimrc
     vim ~/.vimrc
 end
-function fishrc 
+function fishrc
     vim ~/.config/fish/config.fish
 end
-function sofish 
+function sofish
     source ~/.config/fish/config.fish
 end
-function tmuxconf 
+function tmuxconf
     vim ~/.tmux.conf
 end
 
-function clera 
+function clera
     clear
 end
-function eixt 
+function eixt
     exit
 end
 
 function ccr
-    echo "$argv" > ~/.ccr.tmp
+    echo $argv > ~/.ccr.tmp
     set -l file (cut -d '.' -f1 ~/.ccr.tmp)
     /bin/rm -f ~/.ccr.tmp
-    gcc "$argv" -o "$file"
-    ./"$file"
+    gcc $argv -o $file
+    ./$file
+end
+
+function cppcr
+    echo $argv > ~/.cppcr.tmp
+    set -l file(cut -d '.' -f1 ~/.ccr.tmp)
+    /bin/rm -f ~/.cppcr.tmp
+    g++ $argv -o $file
+    ./$file
 end
 
 function javacr
-    echo "$argv" > ~/.jcr.tmp
+    echo $argv > ~/.jcr.tmp
     set -l file (cut -d '.' -f1 ~/.jcr.tmp)
     /bin/rm -f ~/.jcr.tmp
-    javac "$argv"
-    java "$file"
+    javac $argv
+    java $file
 end
 
 function rustcr
-    echo "$argv" > ~/.rcr.tmp
+    echo $argv > ~/.rcr.tmp
     set -l file (cut -d '.' -f1 ~/.rcr.tmp)
     /bin/rm -f ~/.rcr.tmp
-    rustc "$argv"
-    ./"$file"
+    rustc $argv
+    ./$file
 end
 
-alias rm "echo 'This is not a command what you intended to run.'; printf 'Please use'; echo (set_color green) 'trash-put' (set_color normal); printf 'If you want to execute it, use'; echo (set_color red) '\bin\rm' (set_color normal)"
+function npg
+    npm $argv --prefix (git rev-parse --show-toplevel)
+end
+
+function rm
+    echo 'This is not a command what you intended to run.'; printf 'Please use'; echo (set_color green) 'trash-put' (set_color normal); printf 'If you want to execute it, use'; echo (set_color red) '/bin/rm' (set_color normal)
+end
 
 # for Windows Subsystem Linux
-alias start "cmd.exe /c start"
-alias open "explorer.exe"
+function open
+    explorer.exe $argv
+end
 
 # Rust commands
-alias ls "exa"
-alias ll "exa -l"
-alias lt "exa -l -T -L2"
+alias ls "~/.dotfiles/bin/exa"
+alias ll "~/.dotfiles/bin/exa -l"
+alias lt "~/.dotfiles/bin/exa -l -T -L2"
 
-alias cat "bat"
+alias cat "~/.dotfiles/bin/bat"
 
-alias od "hexyl"
+alias od "~/.dotfiles/bin/hexyl"
 
-alias grep "rg"
-
-# Latex
-alias ltclear "rm *.aux *.fdb_latexmk *.synctex.gz *.fls *.log"
+alias grep "~/.dotfiles/bin/rg"
 
 # Trash-cli
 alias tput "trash-put"

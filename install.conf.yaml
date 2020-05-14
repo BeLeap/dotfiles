@@ -4,33 +4,41 @@
       stdout: true
       stderr: true
     link:
+      force: true
       create: true
       relink: true
 
-- clean: ['~']
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
 
 - shell:
-  - [sudo apt install -y fish vim-gtk tmux curl clang ccls fzf cargo, Installing dependencies]
+  - [sudo apt install -y fish neovim tmux curl clang ccls fzf cargo, Installing dependencies]
   - [fish -c "set -U fish_user_paths ~/.cargo/bin $fish_user_paths", Add cargo to path]
   - [cargo install exa, Installing exa]
   - [cargo install ripgrep, Installing ripgrep]
   - [cargo install fd-find, Installing fd-find]
   - [cargo install hexyl, Installing hexyl]
   - [cargo install bat, Installing bat]
-  - [chsh -s /usr/bin/fish]
+  - [chsh -s /usr/bin/fish, Change default shell to fish]
   - [git submodule update --init --recursive, Installing modules]
   - [curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim, Installing vim-plug]
-  - [curl -L https://get.oh-my.fish > ~/omf, Getting oh-my-fish installer]
-  - [fish ~/omf --path=~/.local/share/omf --noninteractive, Installing oh-my-fish]
-  - [/bin/rm ~/omf]
+  - [curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish, Installin fisher]
 
 - link:
     ~/.dotfiles: ""
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc
+    ~/.config/nvim/init.vim: vim/init.vim
     ~/.config/fish/config.fish: fish/config.fish
+    ~/.gdbinit: gdb/.gdbinit
+    ~/.cargo/bin: bin/
+    ~/.config/nvim/coc-settings.json: vim/coc-settings.json
+    ~/.config/nvim/tasks.ini: vim/tasks.ini
 
 - shell:
   - [tinstall | fish, Installing tmux plugin]
   - [vim +PlugInstall +qall, Installing vim plugins]
-  - [omf install agnoster | fish, Installing agnoster]
+  - [fisher add oh-my-fish/theme-bobthefish | fish, Installing agnoster]
