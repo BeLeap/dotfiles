@@ -1,0 +1,9 @@
+format = "$all"
+right_format = "$kubernetes"
+command_timeout = 3000
+
+[shell]
+disabled = true
+
+[kubernetes]
+disabled = false
