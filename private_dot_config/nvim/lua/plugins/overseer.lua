@@ -73,6 +73,23 @@ return {
         end,
         filetype = { "go" },
       })
+
+      overseer.register_template({
+        name = "Make",
+        builder = function()
+          local file = vim.fn.expand("%:p:h")
+          local cmd = { "make", "-C", file }
+          return {
+            cmd = cmd,
+            components = {
+              { "on_output_quickfix", set_diagnostics = true },
+              "on_result_diagnostics",
+              "default",
+            },
+          }
+        end,
+        filetype = { "tex" },
+      })
     end
   },
 }
