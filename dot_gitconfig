@@ -1,0 +1,38 @@
+[user]
+  email = "beleap@beleap.dev"
+  name = "BeLeap"
+
+[core]
+  excludesFile = ~/.gitglobalignore
+
+[push]
+  autoSetupRemote = true
+
+[init]
+  defaultBranch = main
+
+[rerere]
+  enable = true
+
+[column]
+  ui = auto
+
+[branch]
+  sort = "-committerdate"
+
+[fetch]
+  writeCommitGraph = true
+
+[remote.origin]
+  fetch = "+refs/pull/*:refs/remotes/origin/pull/*"
+
+[help]
+  autocorrect = prompt
+
+[alias]
+  adog = "log --all --decorate --oneline --graph"
+
+[includeIf "gitdir:~/work/"]
+  path = ~/work/.gitconfig
+[commit]
+	template = ~/.gitmessage
