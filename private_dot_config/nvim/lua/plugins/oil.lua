@@ -1,6 +1,7 @@
 return {
 	{
 		"stevearc/oil.nvim",
+    lazy = false,
 		cmd = "Oil",
 		opts = {
 			default_file_explorer = true,
