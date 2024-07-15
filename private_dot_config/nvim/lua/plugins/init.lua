@@ -43,9 +43,12 @@ return {
     opts = {
       i = {
         [","] = {
-          ["d"] = function ()
-            vim.cmd[[stopinsert]]
-          end
+          ["d"] = "<Esc>"
+        },
+      },
+      t = {
+        [","] = {
+          ["d"] = "<Esc>"
         },
       },
     },
