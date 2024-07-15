@@ -19,10 +19,10 @@ return {
 			local ollama = require("model.providers.ollama")
 			require("model").setup({
 				chats = {
-					mixtral = {
+					llama = {
 						provider = ollama,
 						params = {
-							model = "mistral",
+							model = "llama3",
 						},
 						builder = function(input)
 							return {
@@ -37,7 +37,7 @@ return {
 					commit = {
 						provider = ollama,
 						params = {
-							model = "mistral",
+							model = "llama3",
 						},
 						mode = require("model").mode.INSERT,
 						builder = function()
