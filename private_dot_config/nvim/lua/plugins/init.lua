@@ -41,14 +41,15 @@ return {
     "max397574/better-escape.nvim",
     event = { "BufEnter" },
     opts = {
+      default_mappings = false,
       i = {
         [","] = {
-          ["d"] = "<Esc>"
+          d = "<Esc>"
         },
       },
       t = {
         [","] = {
-          ["d"] = "<Esc>"
+          d = "<Esc>"
         },
       },
     },
