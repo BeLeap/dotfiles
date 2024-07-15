@@ -39,6 +39,7 @@ return {
   },
   {
     "max397574/better-escape.nvim",
+    lazy = false,
     event = { "BufEnter" },
     opts = {
       default_mappings = false,
