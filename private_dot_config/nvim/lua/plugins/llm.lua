@@ -18,6 +18,21 @@ return {
 		config = function()
 			local ollama = require("model.providers.ollama")
 			require("model").setup({
+				chats = {
+					mixtral = {
+						provider = ollama,
+						params = {
+							model = "mistral",
+						},
+						builder = function(input)
+							return {
+                prompt = "[INST] You are a helpful code assistant.\n"
+                  .. input
+                  .. "[/INST]",
+							}
+						end,
+					},
+				},
 				prompts = {
 					commit = {
 						provider = ollama,
