@@ -11,3 +11,4 @@ vim.keymap.set("n", "<leader>u", "<esc>:undo<cr>", { silent = true, desc = "Undo
 vim.keymap.set("v", "<leader>y", "\"*y")
 
 vim.keymap.set("t", ",d", "<C-\\><C-n>")
+vim.keymap.set("i", ",d", "<ESC>")
