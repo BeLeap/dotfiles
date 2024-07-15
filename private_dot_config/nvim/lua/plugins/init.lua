@@ -42,6 +42,13 @@ return {
     event = { "BufEnter" },
     opts = {
       mapping = { ",d" },
+      i = {
+        [","] = {
+          ["d"] = function ()
+            vim.cmd[[stopinsert]]
+          end
+        },
+      },
     },
   },
   {
