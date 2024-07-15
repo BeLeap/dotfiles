@@ -41,7 +41,6 @@ return {
     "max397574/better-escape.nvim",
     event = { "BufEnter" },
     opts = {
-      mapping = { ",d" },
       i = {
         [","] = {
           ["d"] = function ()
