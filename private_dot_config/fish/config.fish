@@ -7,7 +7,7 @@ if status is-interactive
   alias sofish "source ~/.config/fish/config.fish"
   alias docker "podman"
 
-  abbr v "nvim"
+  alias e "$EDITOR"
 
   abbr gst "git status"
   abbr gsw "git switch"
