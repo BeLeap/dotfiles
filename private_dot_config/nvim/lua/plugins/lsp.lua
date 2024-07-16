@@ -123,6 +123,7 @@ return {
 
       local lua_opts = lsp_zero.nvim_lua_ls()
       require("lspconfig").lua_ls.setup(lua_opts)
+      require("lspconfig").jdtls.setup()
 
       lsp_zero.setup_servers({ "gopls", "dartls", "rescriptls" })
       lsp_zero.setup()
