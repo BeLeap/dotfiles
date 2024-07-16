@@ -1,0 +1,10 @@
+theme = "gruvbox"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+C-q = ":q"
+
+[keys.insert]
+"," = { d = "normal_mode" }
