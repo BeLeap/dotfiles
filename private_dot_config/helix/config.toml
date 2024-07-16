@@ -7,8 +7,7 @@ line-number = "relative"
 hidden = false
 
 [keys.normal]
-C-q = ":quit"
-"," = { s = ":update" }
+"," = { s = ":update", q = ":quit" }
 
 [keys.insert]
 "," = { d = "normal_mode" }
