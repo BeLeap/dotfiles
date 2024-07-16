@@ -1,8 +1,0 @@
-session_name: work
-start_directory: ~/work
-
-windows:
-  - window_name: editor
-    panes:
-      - nvim
-  - window_name: shell
