@@ -5,6 +5,7 @@ line-number = "relative"
 
 [editor.file-picker]
 hidden = false
+git-ignore = false
 
 [keys.normal]
 "," = { s = ":update", q = ":quit" }
