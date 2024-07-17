@@ -43,10 +43,6 @@ if status is-interactive
         alias lla "lsd --group-directories-first -la"
     end
 
-    if type -q nodenv
-        source (nodenv init -|psub)
-    end
-
     if type -q direnv
         direnv hook fish | source
     end
@@ -55,16 +51,8 @@ if status is-interactive
         carapace _carapace | source
     end
 
-    if type -q rbenv
-        status --is-interactive; and rbenv init - fish | source
-    end
-
     if type -q fzf
         fzf --fish | source
-    end
-
-    if type -q pyenv
-        status --is-interactive; and pyenv init - | source
     end
 
     if test -d ~/.asdf
