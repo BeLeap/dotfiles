@@ -66,4 +66,8 @@ if status is-interactive
     if type -q pyenv
         status --is-interactive; and pyenv init - | source
     end
+
+    if test -d ~/.asdf
+        source ~/.asdf/asdf.fish
+    end
 end
