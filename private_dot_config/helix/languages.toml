@@ -3,9 +3,6 @@ command = "biome"
 args = ["lsp-proxy"]
 required-root-patterns = ["biome.json"]
 
-[language-server.typescript-language-server]
-required-root-patterns = ["tsconfig.json"]
-
 [[language]]
 name = "javascript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
@@ -15,8 +12,6 @@ auto-format = true
 name = "typescript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 auto-format = true
-roots = ["deno.json", "deno.jsonc", "package.json", "tsconfig.json", "biome.json"]
-workspace-lsp-roots = ["deno.json", "deno.jsonc", "package.json", "tsconfig.json", "biome.json"]
 
 [[language]]
 name = "tsx"
