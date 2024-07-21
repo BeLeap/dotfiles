@@ -1,5 +1,6 @@
-[language-server]
-biome = { command = "biome", args = ["lsp-proxy"] }
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
 required-root-patterns = ["biome.json"]
 
 [language-server.typescript-language-server]
