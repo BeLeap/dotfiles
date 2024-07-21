@@ -1,5 +1,12 @@
 [language-server]
 biome = { command = "biome", args = ["lsp-proxy"] }
+required-root-patterns = ["biome.json"]
+
+[language-server.deno-lsp]
+required-root-patterns = ["deno.json", "deno.jsonc", "deno.lock"]
+
+[language-server.typescript-language-server]
+required-root-patterns = ["tsconfig.json"]
 
 [[language]]
 name = "javascript"
