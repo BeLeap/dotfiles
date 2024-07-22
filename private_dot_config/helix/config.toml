@@ -6,9 +6,3 @@ line-number = "relative"
 [editor.file-picker]
 hidden = false
 git-ignore = false
-
-[keys.normal]
-"," = { s = ":update", q = ":quit" }
-
-[keys.insert]
-"," = { d = "normal_mode" }
