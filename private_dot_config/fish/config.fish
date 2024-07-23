@@ -1,7 +1,11 @@
 if status is-interactive
     fish_vi_key_bindings
 
-    set -x EDITOR hx
+    if type -q hx
+        set -x EDITOR hx
+    else
+        set -x EDITOR vim
+    end
 
     alias sofish "source ~/.config/fish/config.fish"
     alias docker podman
