@@ -12,6 +12,8 @@ if status is-interactive
 
     alias e "$EDITOR"
 
+    alias lt "ls --tree --depth 3"
+
     abbr gst "git status"
     abbr gsw "git switch"
     abbr gd "git diff"
