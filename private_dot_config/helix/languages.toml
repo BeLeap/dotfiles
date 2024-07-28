@@ -11,12 +11,6 @@ auto-format = true
 [[language]]
 name = "typescript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-formatter = { command = "biome", args = [
-  "format",
-  "--stdin-file-path=prd.js",
-  "--indent-style=space",
-  "--indent-width=4",
-] }
 auto-format = true
 
 [[language]]
