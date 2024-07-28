@@ -5,7 +5,7 @@ return {
     lazy = false,
     init = function()
       vim.o.background = "dark"
-      vim.cmd([[colorscheme gruvbox]])
+      vim.cmd([[colorscheme onedark]])
     end,
   },
 }
