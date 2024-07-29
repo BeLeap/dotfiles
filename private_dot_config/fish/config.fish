@@ -64,6 +64,16 @@ if status is-interactive
         if type -q fd
             set -gx FZF_DEFAULT_COMMAND 'fd --type file'
         end
+
+        function ff
+            fzf | read -l result
+            $EDITOR $result
+        end
+
+        function ffd
+            fzf | read -l result
+            (dirname $result)
+        end
     end
 
     if test -d ~/.asdf
