@@ -31,6 +31,7 @@ if status is-interactive
     abbr kns kubens
 
     abbr prmd "gh pr merge -d"
+    abbr prm "gh pr merge"
     abbr prvw "gh pr view -w"
     abbr prv "gh pr view"
     abbr prcm "gh pr create --assignee @me"
