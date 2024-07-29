@@ -60,6 +60,10 @@ if status is-interactive
 
     if type -q fzf
         fzf --fish | source
+
+        if type -q fd
+            set -gx FZF_DEFAULT_COMMAND 'fd --type file'
+        end
     end
 
     if test -d ~/.asdf
