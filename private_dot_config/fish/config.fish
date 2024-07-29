@@ -72,7 +72,7 @@ if status is-interactive
 
         function ffd
             fzf | read -l result
-            (dirname $result)
+            cd (dirname $result)
         end
     end
 
