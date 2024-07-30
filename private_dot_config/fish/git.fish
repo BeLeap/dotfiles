@@ -25,7 +25,7 @@ function git_commit_with_prefix
     end
 
     set branch_name (git symbolic-ref --short HEAD)
-    set ticket_prefix (echo $branch_name | string match -r '^([A-Z]+-[0-9]+)')
+    set ticket_prefix (echo $branch_name | string match -r '^[A-Z]+-[0-9]+')
 
     if test (count $argv) -gt 0
         set commit_msg $argv
