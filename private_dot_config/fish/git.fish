@@ -92,3 +92,4 @@ function create_rc_pr
 
     gh pr create --assignee @me --base $branch --title RC --body "RC "(date -u +%Y-%m-%dT%H:%M:%S)
 end
+alias crcpr create_rc_pr
