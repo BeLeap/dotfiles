@@ -80,3 +80,15 @@ function git_commit_with_prefix
     git commit -v -m "$commit_msg"
 end
 alias gpc git_commit_with_prefix
+
+function create_rc_pr
+    set branch (git branch --list master main | head -n 1 | awk '{print $1}')
+    if test -z "$branch"
+        echo "Neither master nor main branch exists."
+        return 1
+    end
+
+    echo "Creating RC PR to branch: $branch"
+
+    gh pr create --assignee @me --base $branch --title RC --body "RC "(date -u +%Y-%m-%dT%H:%M:%S)
+end
