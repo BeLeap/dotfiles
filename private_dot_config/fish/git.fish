@@ -42,6 +42,11 @@ function git_commit_with_prefix
         $EDITOR $temp_file
         set commit_msg (grep -v '^#' $temp_file)
         rm $temp_file
+
+        if test -z "$commit_msg"
+            echo "Aborting commit due to empty commit message."
+            return 1
+        end
     end
 
     set commit_msg_with_prefix "[$ticket_prefix] $commit_msg"
