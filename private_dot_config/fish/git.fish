@@ -9,6 +9,7 @@ abbr gf "git fetch --prune --all"
 abbr gl "git pull"
 abbr gco "git checkout"
 abbr glp "git pull --rebase && git push"
+abbr ggr "cd (git diff --cached --name-status)"
 
 # github
 abbr prmd "gh pr merge -d"
