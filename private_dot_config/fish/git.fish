@@ -73,7 +73,7 @@ function git_commit_with_prefix
         end
     end
 
-    if test -z "$ticket_prefix"
+    if test -n "$ticket_prefix"
         set commit_msg "[$ticket_prefix] $commit_msg"
     end
     git commit -v -m "$commit_msg"
