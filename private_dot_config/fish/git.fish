@@ -18,13 +18,19 @@ abbr prv "gh pr view"
 abbr prcm "gh pr create --assignee @me"
 
 function git_commit_with_prefix
+    set git_root (git rev-parse --show-toplevel 2>/dev/null)
+    if test -z "$git_root"
+        echo "Not a git repository."
+        return 1
+    end
+
     set branch_name (git symbolic-ref --short HEAD)
     set ticket_prefix (echo $branch_name | string match -r '^([A-Z]+-[0-9]+)')
 
     if test (count $argv) -gt 0
         set commit_msg $argv
     else
-        set temp_file ".git/COMMIT_EDITMSG"
+        set temp_file "$git_root/.git/COMMIT_EDITMSG"
         echo "" >>$temp_file
         echo "# ------------------------ >8 ------------------------" >>$temp_file
         echo "# Please enter the commit message for your changes. Lines starting" >>$temp_file
