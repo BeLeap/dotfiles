@@ -1,3 +1,4 @@
 .tmuxp.yaml
 root.mark
 .tool-versions
+.envrc
