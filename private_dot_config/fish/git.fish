@@ -50,6 +50,8 @@ function git_commit_with_prefix
                     echo "# added: $file_name" >>$temp_file
                 case D
                     echo "# deleted: $file_name" >>$temp_file
+                case R*
+                    echo "# renamed: $file_name" >>$temp_file
             end
         end
         echo "#" >>$temp_file
