@@ -30,6 +30,7 @@ function git_commit_with_prefix
     if test (count $argv) -gt 0
         set commit_msg $argv
     else
+        set divider "# ------------------------ >8 ------------------------"
         set temp_file "$git_root/.git/COMMIT_EDITMSG"
         echo "" >$temp_file
         echo "# Please enter the commit message for your changes. Lines starting" >>$temp_file
@@ -51,7 +52,7 @@ function git_commit_with_prefix
             end
         end
         echo "#" >>$temp_file
-        echo "# ------------------------ >8 ------------------------" >>$temp_file
+        echo "$divider" >>$temp_file
         echo "# Do not modify or remove the line above." >>$temp_file
         echo "# Everything below it will be ignored." >>$temp_file
         echo "#" >>$temp_file
@@ -59,7 +60,7 @@ function git_commit_with_prefix
 
         git diff --cached >>$temp_file
         $EDITOR $temp_file
-        set commit_msg (grep -v '^#' $temp_file)
+        set commit_msg (grep -v '^#' $temp_file | awk '/^'$divider'/ {exit} {print}')
         rm $temp_file
 
         if test -z "$commit_msg"
