@@ -70,7 +70,9 @@ function git_commit_with_prefix
         end
     end
 
-    set commit_msg_with_prefix "[$ticket_prefix] $commit_msg"
-    git commit -v -m "$commit_msg_with_prefix"
+    if test -z "$ticket_prefix"
+        set commit_msg "[$ticket_prefix] $commit_msg"
+    end
+    git commit -v -m "$commit_msg"
 end
 alias gpc git_commit_with_prefix
