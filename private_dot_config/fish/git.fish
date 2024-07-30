@@ -38,7 +38,7 @@ function git_commit_with_prefix
         echo "# On branch $branch_name" >>$temp_file
         echo "#" >>$temp_file
         echo "# Changes to be committed:" >>$temp_file
-        git diff --cached --name-status | sed 's/^/# /' >>$temp_file
+        git diff --cached --name-only | sed 's/^/# /' >>$temp_file
         echo "#" >>$temp_file
         echo "# ------------------------ >8 ------------------------" >>$temp_file
         echo "# Do not modify or remove the line above." >>$temp_file
