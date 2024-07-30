@@ -24,7 +24,7 @@ function git_commit_with_prefix
     if test (count $argv) -gt 0
         set commit_msg $argv
     else
-        set temp_file (mktemp)
+        set temp_file ".git/COMMIT_EDITMSG"
         echo "" >>$temp_file
         echo "# ------------------------ >8 ------------------------" >>$temp_file
         echo "# Please enter the commit message for your changes. Lines starting" >>$temp_file
