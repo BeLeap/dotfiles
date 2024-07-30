@@ -33,4 +33,4 @@ function git_commit_with_prefix
     set commit_msg_with_prefix "$ticket_prefix: $commit_msg"
     git commit -v -m "$commit_msg_with_prefix"
 end
-alias gpc git_prefix_with_commit
+alias gpc git_commit_with_prefix
