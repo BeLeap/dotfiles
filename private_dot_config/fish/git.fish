@@ -33,7 +33,7 @@ function git_commit_with_prefix
         echo "# On branch $branch_name" >>$temp_file
         echo "#" >>$temp_file
         echo "# Changes to be committed:" >>$temp_file
-        git diff --cached --name-status | sed 's/^/# /' >>$temp_file
+        git diff --cached | sed 's/^/# /' >>$temp_file
         echo "# ------------------------ >8 ------------------------" >>$temp_file
         $EDITOR $temp_file
         set commit_msg (grep -v '^#' $temp_file)
