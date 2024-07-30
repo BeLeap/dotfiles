@@ -39,15 +39,15 @@ function git_commit_with_prefix
         echo "#" >>$temp_file
         echo "# Changes to be committed:" >>$temp_file
         for line in (git diff --cached --name-status)
-            set status (echo $line | awk '{print $1}')
-            set file (echo $line | awk '{print $2}')
-            switch $status
+            set file_status (echo $line | awk '{print $1}')
+            set file_name (echo $line | awk '{print $2}')
+            switch $file_status
                 case M
-                    echo "# modified: $file" >>$temp_file
+                    echo "# modified: $file_name" >>$temp_file
                 case A
-                    echo "# added: $file" >>$temp_file
+                    echo "# added: $file_name" >>$temp_file
                 case D
-                    echo "# deleted: $file" >>$temp_file
+                    echo "# deleted: $file_name" >>$temp_file
             end
         end
         echo "#" >>$temp_file
