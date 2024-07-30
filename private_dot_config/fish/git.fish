@@ -31,7 +31,7 @@ function git_commit_with_prefix
         set commit_msg $argv
     else
         set temp_file "$git_root/.git/COMMIT_EDITMSG"
-        echo "" >>$temp_file
+        echo "" >$temp_file
         echo "# ------------------------ >8 ------------------------" >>$temp_file
         echo "# Please enter the commit message for your changes. Lines starting" >>$temp_file
         echo "# with '#' will be ignored, and an empty message aborts the commit." >>$temp_file
