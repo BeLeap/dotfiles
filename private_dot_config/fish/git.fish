@@ -32,15 +32,21 @@ function git_commit_with_prefix
     else
         set temp_file "$git_root/.git/COMMIT_EDITMSG"
         echo "" >$temp_file
-        echo "# ------------------------ >8 ------------------------" >>$temp_file
         echo "# Please enter the commit message for your changes. Lines starting" >>$temp_file
         echo "# with '#' will be ignored, and an empty message aborts the commit." >>$temp_file
         echo "#" >>$temp_file
         echo "# On branch $branch_name" >>$temp_file
         echo "#" >>$temp_file
         echo "# Changes to be committed:" >>$temp_file
-        git diff --cached >>$temp_file
+        git diff --cached --name-status | sed 's/^/# /' >>$temp_file
+        echo "#" >>$temp_file
         echo "# ------------------------ >8 ------------------------" >>$temp_file
+        echo "# Do not modify or remove the line above." >>$temp_file
+        echo "# Everything below it will be ignored." >>$temp_file
+        echo "#" >>$temp_file
+        echo "# Changes to be committed:" >>$temp_file
+
+        git diff --cached >>$temp_file
         $EDITOR $temp_file
         set commit_msg (grep -v '^#' $temp_file)
         rm $temp_file
