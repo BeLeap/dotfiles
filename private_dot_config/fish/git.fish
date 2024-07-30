@@ -25,8 +25,21 @@ function git_commit_with_prefix
         set commit_msg $argv
     else
         set temp_file (mktemp)
+        echo "\n# Please enter the commit message for your changes. Lines starting" >>$temp_file
+        echo "# with '#' will be ignored, and an empty message aborts the commit." >>$temp_file
+        echo "#" >>$temp_file
+        echo "# On branch $branch_name" >>$temp_file
+        echo "#" >>$temp_file
+        echo "# Changes to be committed:" >>$temp_file
+        git diff --cached --name-status | sed 's/^/# /' >>$temp_file
+        echo "#" >>$temp_file
+        echo "# ------------------------ >8 ------------------------" >>$temp_file
+        echo "# Do not touch the line above." >>$temp_file
+        echo "# Everything below will be removed." >>$temp_file
+        echo "# ------------------------ >8 ------------------------" >>$temp_file
+        echo >>$temp_file
         $EDITOR $temp_file
-        set commit_msg (cat $temp_file)
+        set commit_msg (head -n -12 $temp_file)
         rm $temp_file
     end
 
