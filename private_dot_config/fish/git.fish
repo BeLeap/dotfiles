@@ -40,7 +40,7 @@ function git_commit_with_prefix
         echo "# ------------------------ >8 ------------------------" >>$temp_file
         echo >>$temp_file
         $EDITOR $temp_file
-        set commit_msg (head -n -12 $temp_file)
+        set commit_msg (grep -v '^#' $temp_file)
         rm $temp_file
     end
 
