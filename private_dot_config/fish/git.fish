@@ -30,7 +30,7 @@ function git_commit_with_prefix
         rm $temp_file
     end
 
-    set commit_msg_with_prefix "$ticket_prefix: $commit_msg"
+    set commit_msg_with_prefix "[$ticket_prefix] $commit_msg"
     git commit -v -m "$commit_msg_with_prefix"
 end
 alias gpc git_commit_with_prefix
