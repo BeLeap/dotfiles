@@ -38,7 +38,18 @@ function git_commit_with_prefix
         echo "# On branch $branch_name" >>$temp_file
         echo "#" >>$temp_file
         echo "# Changes to be committed:" >>$temp_file
-        git diff --cached --name-only | sed 's/^/# /' >>$temp_file
+        for line in (git diff --cached --name-status)
+            set status (echo $line | cut -f1)
+            set file (echo $line | cut -f2)
+            switch $status
+                case M
+                    echo "# modified: $file" >>$temp_file
+                case A
+                    echo "# added: $file" >>$temp_file
+                case D
+                    echo "# deleted: $file" >>$temp_file
+            end
+        end
         echo "#" >>$temp_file
         echo "# ------------------------ >8 ------------------------" >>$temp_file
         echo "# Do not modify or remove the line above." >>$temp_file
