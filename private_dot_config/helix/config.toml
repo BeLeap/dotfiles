@@ -8,4 +8,4 @@ hidden = false
 git-ignore = false
 
 [editor.soft-wrap]
-enabled = true
+enable = true
