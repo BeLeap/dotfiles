@@ -19,5 +19,5 @@ right = ["diagnostics", "selections", "position", "file-encoding", "file-line-en
 display-messages = true
 display-inlay-hints = true
 
-[editor.whitespace]
-render = "all"
+[editor.whitespace.render]
+tab = "all"
