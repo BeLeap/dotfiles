@@ -14,3 +14,6 @@ enable = true
 left = ["mode", "spinner"]
 center = ["file-name", "read-only-indicator", "file-modification-indicator"]
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+
+[editor.lsp]
+display-messages = true
