@@ -17,3 +17,4 @@ right = ["diagnostics", "selections", "position", "file-encoding", "file-line-en
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
