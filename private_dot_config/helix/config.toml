@@ -12,4 +12,4 @@ enable = true
 
 [editor.statusline]
 left = ["mode", "spinner"]
-center = ["file-name", "read-only-indicataor", "file-modification-indicator"]
+center = ["file-name", "read-only-indicator", "file-modification-indicator"]
