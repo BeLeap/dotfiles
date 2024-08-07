@@ -16,9 +16,9 @@ if status is-interactive
 
     alias lt "ls --tree --depth 3"
 
-    abbr k kubectl
-    abbr ktx kubectx
-    abbr kns kubens
+    alias k kubectl
+    alias ktx kubectx
+    alias kns kubens
 
     abbr tf terraform
 
