@@ -6,6 +6,8 @@ line-number = "relative"
 [editor.file-picker]
 hidden = false
 git-ignore = false
+git-global = false
+git-exclude = false
 
 [editor.soft-wrap]
 enable = true
