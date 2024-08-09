@@ -19,6 +19,8 @@ if status is-interactive
     alias k kubectl
     alias ktx kubectx
     alias kns kubens
+    alias ku k9s
+    alias kh "k9s --headless"
 
     abbr tf terraform
 
