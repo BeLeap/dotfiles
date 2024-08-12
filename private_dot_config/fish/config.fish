@@ -56,10 +56,9 @@ if status is-interactive
 
             if test -z "$result"
                 echo "empty result"
-                exit 1
+            else
+                $EDITOR $result
             end
-
-            $EDITOR $result
         end
 
         function ffd
@@ -67,10 +66,9 @@ if status is-interactive
 
             if test -z "$result"
                 echo "empty result"
-                exit 1
+            else
+                cd (dirname $result)
             end
-
-            cd (dirname $result)
         end
     end
 
