@@ -13,6 +13,7 @@ abbr ggr "cd (git rev-parse --show-toplevel 2>/dev/null)"
 
 # github
 abbr prmd "gh pr merge -d"
+abbr prmds "gh pr merge -d -s"
 abbr prm "gh pr merge"
 abbr prvw "gh pr view -w"
 abbr prv "gh pr view"
