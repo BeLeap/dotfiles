@@ -53,11 +53,23 @@ if status is-interactive
 
         function ff
             fzf | read -l result
+
+            if test -z "$result"
+                echo "empty result"
+                exit 1
+            end
+
             $EDITOR $result
         end
 
         function ffd
             fzf | read -l result
+
+            if test -z "$result"
+                echo "empty result"
+                exit 1
+            end
+
             cd (dirname $result)
         end
     end
