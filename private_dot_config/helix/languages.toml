@@ -30,3 +30,7 @@ language-servers = [ { name = "vscode-json-language-server", except-features = [
 [[language]]
 name = "python"
 language-servers = [ "pyright" ]
+
+[[language]]
+name = "Dockerfile"
+file-types = ["Dockerfile", { glob = "*Dockerfile*" }]
