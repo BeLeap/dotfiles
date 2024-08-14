@@ -35,3 +35,7 @@ language-servers = [ "pyright" ]
 name = "dockerfile"
 scope = "source.dockerfile"
 file-types = ["Dockerfile", { glob = "*Dockerfile*" }]
+
+[[grammar]]
+name = "dockerfile"
+source = { git = "https://github.com/camdencheek/tree-sitter-dockerfile", rev = "main" }
