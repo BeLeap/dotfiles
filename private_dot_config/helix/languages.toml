@@ -32,5 +32,6 @@ name = "python"
 language-servers = [ "pyright" ]
 
 [[language]]
-name = "Dockerfile"
+name = "dockerfile"
+scope = "source.dockerfile"
 file-types = ["Dockerfile", { glob = "*Dockerfile*" }]
