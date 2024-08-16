@@ -7,7 +7,11 @@ if status is-interactive
         set -x EDITOR vim
     end
 
-    set -x FZF_EXISTS (type -q fzf)
+
+    set -x FZF_EXISTS false
+    if type -q fzf
+        set -x FZF_EXISTS true
+    end
 
     alias sofish "source ~/.config/fish/config.fish"
     alias docker podman
