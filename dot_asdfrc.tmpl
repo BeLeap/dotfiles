@@ -1,2 +1,5 @@
 legacy_version_file = yes
+
+{{- if eq .chezmoi.os "darwin" -}}
 java_macos_integration_enable = yes
+{{ end - }}
