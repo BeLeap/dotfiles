@@ -96,7 +96,7 @@ end
 alias crcpr create_rc_pr
 
 if $FZF_EXISTS
-    function fsw -d "Fuzzy-find and switch a branch"
+    function gfsw -d "Fuzzy-find and switch a branch"
         git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git switch "$result"
     end
 end
