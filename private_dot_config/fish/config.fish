@@ -7,6 +7,8 @@ if status is-interactive
         set -x EDITOR vim
     end
 
+    set -x FZF_EXISTS (type -q fzf)
+
     alias sofish "source ~/.config/fish/config.fish"
     alias docker podman
 
@@ -44,7 +46,7 @@ if status is-interactive
         carapace _carapace | source
     end
 
-    if type -q fzf
+    if $FZF_EXISTS
         fzf --fish | source
 
         if type -q fd
