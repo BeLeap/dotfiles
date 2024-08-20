@@ -4,7 +4,7 @@ export LC_ALL="en_US.UTF-8"
 alias k="kubectl"
 alias ll="ls -l"
 
-alais sobash="source ~/.bashrc"
+alias sobash="source ~/.bashrc"
 
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
