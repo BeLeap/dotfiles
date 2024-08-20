@@ -1,5 +1,10 @@
-export PATH=$HOME/.local/bin:$HOME/.asdf/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export LC_ALL="en_US.UTF-8"
 
 alias k="kubectl"
 alias ll="ls -l"
+
+alais sobash="source ~/.bashrc"
+
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
