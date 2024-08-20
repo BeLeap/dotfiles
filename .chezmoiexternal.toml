@@ -1,0 +1,8 @@
+[".asdf"]
+    type = "git-repo"
+    url = "https://github.com/asdf-vm/asdf.git"
+    refreshPeriod = "168h"
+[".asdf".pull]
+    args = ["--ff-only"]
+[".asdf".clone]
+    args = ["-b", "v0.14.1"]
