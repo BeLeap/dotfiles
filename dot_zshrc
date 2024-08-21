@@ -4,7 +4,7 @@ export LC_ALL="en_US.UTF-8"
 alias k="kubectl"
 alias ll="lsd -l"
 
-if type "starship" > /dev/null; then
+if [[ -x starship ]]; then
   eval "$(starship init zsh)"
 fi
 
