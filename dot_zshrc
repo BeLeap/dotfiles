@@ -14,7 +14,9 @@ alias ls="lsd"
 alias ll="lsd -l"
 alias lla="lsd -al"
 
+alias ezsh="e $HOME/.zshrc"
 alias sozsh="source $HOME/.zshrc"
+alias azsh="chezmoi add $HOME/.zshrc"
 
 if [[ ! -z "$(command -v starship)" ]]; then
   eval "$(starship init zsh)"
