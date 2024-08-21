@@ -12,3 +12,7 @@ alias sozsh="source $HOME/.zshrc"
 if [[ ! -z "$(command -v starship)" ]]; then
   eval "$(starship init zsh)"
 fi
+
+if [[ -d "$HOME/.asdf" ]]; then
+  . "$HOME/.asdf/asdf.sh"
+fi
