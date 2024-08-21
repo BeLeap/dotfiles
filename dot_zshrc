@@ -1,7 +1,7 @@
 if [[ ! -z "$(command -v hx)" ]]; then
-  export EDITOR hx
+  export EDITOR="hx"
 else
-  export EDITOR vim
+  export EDITOR="vim"
 fi
 
 
