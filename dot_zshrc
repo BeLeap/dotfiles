@@ -3,7 +3,7 @@ if [[ ! -z "$(command -v hx)" ]]; then
 else
   export EDITOR="vim"
 fi
-alas e="$EDITOR"
+alias e="$EDITOR"
 
 export PATH=$HOME/.local/bin:/opt/homebrew/bin:$PATH
 export LC_ALL="en_US.UTF-8"
