@@ -11,7 +11,7 @@ if [[ -d "$HOME/.zinit" ]]; then
   export ZINIT_HOME="$HOME/.zinit"
   source "${ZINIT_HOME}/zinit.zsh"
 
-  zinit ice wait
+  zinit ice wait lucid
 
   zinit light zsh-users/zsh-syntax-highlighting
 
