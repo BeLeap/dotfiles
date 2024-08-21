@@ -30,6 +30,8 @@ alias gsw="git switch"
 alias gd="git diff"
 alias gp="git push"
 
+alias prcm="gh pr create --assignee @me"
+
 if [[ ! -z "$(command -v starship)" ]]; then
   eval "$(starship init zsh)"
 fi
