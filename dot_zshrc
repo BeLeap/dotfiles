@@ -5,6 +5,19 @@ else
 fi
 alias e="$EDITOR"
 
+if [[ -d "$HOME/.zplug" ]]; then
+  source "$HOME/.zplug/init.zsh"
+  zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+  if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+  fi
+  zplug load
+fi
+
 export PATH=$HOME/.local/bin:/opt/homebrew/bin:$PATH
 export LC_ALL="en_US.UTF-8"
 
@@ -48,15 +61,6 @@ if [[ ! -z "$(command -v carapace)" ]]; then
   source <(carapace _carapace)
 fi
 
-if [[ -d "$HOME/.zplug" ]]; then
-  source "$HOME/.zplug/init.zsh"
-  zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-  if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-  fi
-  zplug load --verbose
+if [[ ! -z "$(command -v direnv)" ]]; then
+  eval "$(direnv hook zsh)"
 fi
