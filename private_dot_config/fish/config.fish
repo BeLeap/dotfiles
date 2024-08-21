@@ -7,10 +7,13 @@ if status is-interactive
         set -x EDITOR vim
     end
 
-
     set -x FZF_EXISTS false
     if type -q fzf
         set -x FZF_EXISTS true
+    end
+
+    if test -d ~/.asdf
+        source ~/.asdf/asdf.fish
     end
 
     alias sofish "source ~/.config/fish/config.fish"
@@ -76,9 +79,5 @@ if status is-interactive
                 cd (dirname $result)
             end
         end
-    end
-
-    if test -d ~/.asdf
-        source ~/.asdf/asdf.fish
     end
 end
