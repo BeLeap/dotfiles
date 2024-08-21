@@ -21,6 +21,8 @@ if [[ -d "$HOME/.zplug" ]]; then
 else
   # Some fallback configs
   bindkey -v
+  bindkey ^R history-incremental-search-backward 
+  bindkey ^S history-incremental-search-forward
 fi
 
 export PATH=$HOME/.local/bin:/opt/homebrew/bin:$PATH
@@ -33,7 +35,7 @@ alias ll="lsd -l"
 alias lla="lsd -al"
 
 alias ezsh="e $HOME/.zshrc"
-alias sozsh="source $HOME/.zshrc"
+alias sozsh=". $HOME/.zshrc"
 alias azsh="chezmoi add $HOME/.zshrc"
 
 alias k="kubectl"
