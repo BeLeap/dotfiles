@@ -5,19 +5,14 @@ else
 fi
 alias e="$EDITOR"
 
-if [[ -d "$HOME/.zplug" ]]; then
-  source "$HOME/.zplug/init.zsh"
+if [[ -d "$HOME/.zinit" ]]; then
+  export ZINIT_HOME="$HOME/.zinit"
+  source "${ZINIT_HOME}/zinit.zsh"
 
-  zplug "zsh-users/zsh-syntax-highlighting", defer:2
-  zplug "jeffreytse/zsh-vi-mode"
+  zinit light zsh-users/zsh-syntax-highlighting
 
-  if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-  fi
-  zplug load
+  zinit ice depth=1
+  zinit light jeffreytse/zsh-vi-mode
 else
   # Some fallback configs
   bindkey -v
