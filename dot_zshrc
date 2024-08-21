@@ -24,6 +24,12 @@ alias kns="kubens"
 alias ku="k9s"
 alias kh="k9s --headless"
 
+alias ga="git add"
+alias gc="git commit"
+alias gsw="git switch"
+alias gd="git diff"
+alias gp="git push"
+
 if [[ ! -z "$(command -v starship)" ]]; then
   eval "$(starship init zsh)"
 fi
@@ -33,6 +39,12 @@ if [[ -d "$HOME/.asdf" ]]; then
 fi
 
 . $HOME/.scripts/z.sh
+
+if [[ ! -z "$(command -v carapace)" ]]; then
+  export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+  zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+  source <(carapace _carapace)
+fi
 
 if [[ -d "$HOME/.zplug" ]]; then
   source "$HOME/.zplug/init.zsh"
