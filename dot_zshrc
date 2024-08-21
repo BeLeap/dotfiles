@@ -70,6 +70,8 @@ alias gc="git commit"
 alias gst="git status"
 alias gp="git push"
 
+alias zj="zellij"
+
 function create_rc_pr() {
     branch=$(git branch --list master main | head -n 1 | awk '{print $1}')
     if [ -z "$branch" ]; then
