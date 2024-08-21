@@ -7,9 +7,9 @@
 [".asdf".clone]
     args = ["-b", "v0.14.1"]
 
-[".zplug"]
+[".zinit"]
     type = "git-repo"
-    url = "https://github.com/zplug/zplug.git"
+    url = "https://github.com/zdharma-continuum/zinit.git"
     refreshPeriod = "168h"
-[".zplug".pull]
+[".zinit".pull]
     args = ["--ff-only"]
