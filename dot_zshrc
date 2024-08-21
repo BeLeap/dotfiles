@@ -18,6 +18,12 @@ alias ezsh="e $HOME/.zshrc"
 alias sozsh="source $HOME/.zshrc"
 alias azsh="chezmoi add $HOME/.zshrc"
 
+alias k="kubectl"
+alias ktx="kubectx"
+alias kns="kubens"
+alias ku="k9s"
+alias kh="k9s --headless"
+
 if [[ ! -z "$(command -v starship)" ]]; then
   eval "$(starship init zsh)"
 fi
