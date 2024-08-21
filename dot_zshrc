@@ -4,7 +4,8 @@ export LC_ALL="en_US.UTF-8"
 alias k="kubectl"
 alias ll="lsd -l"
 
-if [[ -x starship ]]; then
-  eval "$(starship init zsh)"
+if [[ -x starship ]]
+then
+  echo "starship exists"
 fi
 
