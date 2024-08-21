@@ -7,4 +7,3 @@ alias ll="lsd -l"
 if [ ! -z "$(command -v starship)" ]; then
   echo "starship exists"
 fi
-
