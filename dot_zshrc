@@ -48,7 +48,26 @@ alias gsw="git switch"
 alias gd="git diff"
 alias gp="git push"
 
-alias prcm="gh pr create --assignee @me"
+if [[ ! -z "$(command -v gh)" ]]; then
+  alias prcm="gh pr create --assignee @me"
+  alias prv="gh pr view"
+  alias prvw="gh pr view -w"
+  alias prm="gh pr merge"
+  alias prmd="gh pr merge -d"
+fi
+
+function create_rc_pr() {
+    branch=$(git branch --list master main | head -n 1 | awk '{print $1}')
+    if [ -z "$branch" ]; then
+        echo "Neither master nor main branch exists."
+        return 1
+    fi
+
+    echo "Creating RC PR to branch: $branch"
+
+    gh pr create --assignee @me --base $branch --title "RC" --body "RC $(date -u +%Y-%m-%dT%H:%M:%S)"
+}
+alias crcpr="create_rc_pr"
 
 if [[ ! -z "$(command -v starship)" ]]; then
   eval "$(starship init zsh)"
