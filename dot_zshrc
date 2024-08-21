@@ -5,6 +5,7 @@ alias k="kubectl"
 
 alias ls="lsd"
 alias ll="lsd -l"
+alias lla="lsd -al"
 
 alias sozsh="source $HOME/.zshrc"
 
