@@ -6,3 +6,10 @@
     args = ["--ff-only"]
 [".asdf".clone]
     args = ["-b", "v0.14.1"]
+
+[".zplug"]
+    type = "git-repo"
+    url = "https://github.com/zplug/zplug.git"
+    refreshPeriod = "168h"
+[".zplug".pull]
+    args = ["--ff-only"]
