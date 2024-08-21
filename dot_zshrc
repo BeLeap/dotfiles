@@ -53,6 +53,10 @@ alias kns="kubens"
 alias ku="k9s"
 alias kh="k9s --headless"
 
+alias cdiff="chezmoi diff"
+alias cadd="chezmoi add"
+alias cupdate="chezmoi update"
+
 if [[ ! -z "$(command -v gh)" ]]; then
   alias prcm="gh pr create --assignee @me"
   alias prv="gh pr view"
