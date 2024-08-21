@@ -7,7 +7,9 @@ alias e="$EDITOR"
 
 if [[ -d "$HOME/.zplug" ]]; then
   source "$HOME/.zplug/init.zsh"
+
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
+  zplug "jeffreytse/zsh-vi-mode"
 
   if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -16,6 +18,9 @@ if [[ -d "$HOME/.zplug" ]]; then
     fi
   fi
   zplug load
+else
+  # Some fallback configs
+  bindkey -v
 fi
 
 export PATH=$HOME/.local/bin:/opt/homebrew/bin:$PATH
