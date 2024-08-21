@@ -2,6 +2,8 @@ export PATH=$HOME/.local/bin:/opt/homebrew/bin:$PATH
 export LC_ALL="en_US.UTF-8"
 
 alias k="kubectl"
+
+alias ls="lsd"
 alias ll="lsd -l"
 
 alias sozsh="source $HOME/.zshrc"
