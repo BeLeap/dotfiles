@@ -1,4 +1,4 @@
-if [[ ! -z "$(command -v hx) ]]; then
+if [[ ! -z "$(command -v hx)" ]]; then
   export EDITOR hx
 else
   export EDITOR vim
