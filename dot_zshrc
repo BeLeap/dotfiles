@@ -1,3 +1,5 @@
+autoload -Uz compinit && compinit
+
 if [[ ! -z "$(command -v hx)" ]]; then
   export EDITOR="hx"
 else
