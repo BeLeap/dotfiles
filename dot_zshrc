@@ -6,6 +6,6 @@ alias ll="lsd -l"
 
 alias sozsh="source $HOME/.zshrc"
 
-if [[ -z "$(command -v starship)" ]]; then
+if [[ ! -z "$(command -v starship)" ]]; then
   eval "$(starship init zsh)"
 fi
