@@ -69,6 +69,7 @@ fi
 alias gc="git commit"
 alias gst="git status"
 alias gp="git push"
+alias glp="git pull --rebase && git push"
 
 alias zj="zellij"
 
