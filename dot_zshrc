@@ -7,6 +7,10 @@ else
 fi
 alias e="$EDITOR"
 
+if [[ ! -z "$(command -v fzf)" ]]; then
+  export FZF_EXISTS="true"
+fi
+
 if [[ -d "$HOME/.zinit" ]]; then
   export ZINIT_HOME="$HOME/.zinit"
   source "${ZINIT_HOME}/zinit.zsh"
@@ -72,6 +76,23 @@ alias gp="git push"
 alias glp="git pull --rebase && git push"
 
 alias zj="zellij"
+
+if [[ $FZF_EXISTS == "true" ]]; then
+  fo() {
+    IFS=$'\n' out=("$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
+    key=$(head -1 <<< "$out")
+    file=$(head -2 <<< "$out" | tail -1)
+    if [ -n "$file" ]; then
+      [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+    fi
+  }
+
+  cdf() {
+    local file
+    local dir
+    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+  }
+fi
 
 function create_rc_pr() {
     branch=$(git branch --list master main | head -n 1 | awk '{print $1}')
