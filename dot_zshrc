@@ -47,6 +47,9 @@ if [[ ! -z "$(command -v lsd)" ]]; then
   alias ls="lsd"
   alias ll="lsd -l"
   alias lla="lsd -al"
+else
+  alias ll="ls -l"
+  alias lla="ls -al"
 fi
 
 alias ezsh="e $HOME/.zshrc"
