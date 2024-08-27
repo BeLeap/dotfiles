@@ -75,6 +75,7 @@ alias gst="git status"
 alias gp="git push"
 alias glp="git pull --rebase && git push"
 alias gl="git pull --rebase"
+alias gsw="git switch"
 
 alias zj="zellij"
 
