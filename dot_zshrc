@@ -82,6 +82,26 @@ alias glp="git pull --rebase && git push"
 alias gl="git pull --rebase"
 alias gsw="git switch"
 
+gpc() {
+  local branch_name=$(git rev-parse --abbrev-ref HEAD)
+
+  if [[ "$branch_name" =~ ^([A-Za-z]+-[0-9]+|[0-9]+)[/_]? ]]; then
+    local issue_ticket="${match[1]}"
+    
+    local temp_commit_file=$(mktemp)
+
+    echo "[$issue_ticket] " > "$temp_commit_file"
+
+    git commit --verbose --template="$temp_commit_file"
+
+    rm -f "$temp_commit_file"
+  else
+    echo "Error: Unable to extract issue ticket from branch name."
+    return 1
+  fi
+}
+
+
 alias zj="zellij"
 
 if [[ $FZF_EXISTS == "true" ]]; then
