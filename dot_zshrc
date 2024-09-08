@@ -7,10 +7,6 @@ else
 fi
 alias e="$EDITOR"
 
-if [[ ! -z "$(command -v fzf)" ]]; then
-  export FZF_EXISTS="true"
-fi
-
 if [[ -d "$HOME/.zinit" ]]; then
   export ZINIT_HOME="$HOME/.zinit"
   source "${ZINIT_HOME}/zinit.zsh"
@@ -43,14 +39,9 @@ export LC_ALL="en_US.UTF-8"
 
 alias k="kubectl"
 
-if [[ ! -z "$(command -v lsd)" ]]; then
-  alias ls="lsd"
-  alias ll="lsd -l"
-  alias lla="lsd -al"
-else
-  alias ll="ls -l"
-  alias lla="ls -al"
-fi
+alias ls="lsd"
+alias ll="lsd -l"
+alias lla="lsd -al"
 
 alias ezsh="e $HOME/.zshrc"
 alias sozsh=". $HOME/.zshrc"
@@ -78,48 +69,11 @@ fi
 alias gc="git commit"
 alias gst="git status"
 alias gp="git push"
-alias glp="git pull --rebase && git push"
-alias gl="git pull --rebase"
+alias gl="git pull"
 alias gsw="git switch"
-
-gpc() {
-  local branch_name=$(git rev-parse --abbrev-ref HEAD)
-
-  if [[ "$branch_name" =~ ^([A-Za-z]+-[0-9]+|#[0-9]+)[/_]? ]]; then
-    local issue_ticket="${match[1]}"
-    
-    local temp_commit_file=$(mktemp)
-
-    echo "[$issue_ticket] " > "$temp_commit_file"
-
-    git commit --verbose --template="$temp_commit_file"
-
-    rm -f "$temp_commit_file"
-  else
-    echo "Error: Unable to extract issue ticket from branch name."
-    return 1
-  fi
-}
-
+alias glp="git pull --rebase && git push"
 
 alias zj="zellij"
-
-if [[ $FZF_EXISTS == "true" ]]; then
-  fo() {
-    IFS=$'\n' out=("$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
-    key=$(head -1 <<< "$out")
-    file=$(head -2 <<< "$out" | tail -1)
-    if [ -n "$file" ]; then
-      [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
-    fi
-  }
-
-  cdf() {
-    local file
-    local dir
-    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
-  }
-fi
 
 function create_rc_pr() {
     branch=$(git branch --list master main | head -n 1 | awk '{print $1}')
@@ -133,6 +87,32 @@ function create_rc_pr() {
     gh pr create --assignee @me --base $branch --title "RC" --body "RC $(date -u +%Y-%m-%dT%H:%M:%S)"
 }
 alias crcpr="create_rc_pr"
+
+function gpc() {
+  # 현재 브랜치명을 가져온다
+  branch_name=$(git rev-parse --abbrev-ref HEAD)
+
+  # 브랜치명에서 issue 번호 추출 (형식: #123 또는 ABC-1234)
+  issue=$(echo $branch_name | sed -E 's|([^/]+).*|\1|')
+
+  # 추출한 issue 번호가 유효한지 확인
+  if [[ $issue =~ ^(#|[A-Z]+-[0-9]+)$ ]]; then
+    # 임시 파일 생성
+    temp_file=$(mktemp /tmp/commit_msg.XXXXXX)
+
+    # 템플릿 형식으로 [<issue>]를 파일의 첫 줄에 작성
+    echo "[$issue] " > $temp_file
+
+    # git commit 명령을 호출하면서 템플릿 파일을 사용
+    git commit -v -t $temp_file
+
+    # 임시 파일 삭제
+    rm -f $temp_file
+  else
+    echo "Error: 현재 브랜치에서 유효한 issue 번호를 찾을 수 없습니다."
+    echo "브랜치 형식은 #123 또는 ABC-1234 형식이어야 합니다."
+  fi
+}
 
 if [[ ! -z "$(command -v starship)" ]]; then
   eval "$(starship init zsh)"
