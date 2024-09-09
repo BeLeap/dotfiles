@@ -4,8 +4,6 @@
     refreshPeriod = "168h"
 [".asdf".pull]
     args = ["--ff-only"]
-[".asdf".clone]
-    args = ["-b", "v0.14.1"]
 
 [".zinit"]
     type = "git-repo"
