@@ -9,6 +9,6 @@ config.font_size = 17
 
 config.color_scheme = 'OneDark (base16)'
 config.enable_tab_bar = false
-config.window_decorations = "NONE"
+config.window_decorations = "RESIZE"
 
 return config
