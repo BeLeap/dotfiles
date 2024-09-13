@@ -264,7 +264,6 @@ simplified_ui true
 themes {
     one-dark {
         fg 220 223 228
-        // bg 40 44 52
         bg 10 14 22
         black 27 29 35
         red 227 63 76
