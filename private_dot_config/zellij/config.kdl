@@ -262,7 +262,7 @@ simplified_ui true
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
 themes {
-    one-half-dark {
+    one-dark {
         fg 220 223 228
         // bg 40 44 52
         bg 10 14 22
@@ -282,7 +282,7 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "one-half-dark"
+theme "one-dark"
 
 // The name of the default layout to load on startup
 // Default: "default"
