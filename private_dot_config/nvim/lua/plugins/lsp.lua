@@ -78,7 +78,7 @@ return {
 				},
 			})
 			lsp_zero.configure("clangd", {})
-			lsp_zero.configure("tsserver", {
+			lsp_zero.configure("ts_ls", {
 				single_file_support = false,
 				root_dir = require("lspconfig.util").root_pattern("package.json"),
 			})
