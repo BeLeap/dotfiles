@@ -17,7 +17,7 @@ return {
     config = function()
       require("project_nvim").setup({
         detection_methods = { "pattern", "lsp" },
-        pattern = { "root.md", ".nvim", ">projects" },
+        pattern = { "root.md", ".nvim" },
         silent_chdir = true,
         show_hidden = true,
         excluder_dirs = {
