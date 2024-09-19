@@ -9,7 +9,7 @@ return {
         end,
       },
       {
-        "<leader>tf",
+        "<leader>f",
         function()
           require("telescope.builtin").find_files()
         end,
