@@ -111,9 +111,4 @@ return {
 		"ziglang/zig.vim",
 		event = { "BufEnter *.zig" },
 	},
-	{
-		"numToStr/Comment.nvim",
-		event = { "BufEnter" },
-		config = true,
-	},
 }
