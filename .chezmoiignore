@@ -1,8 +1,2 @@
 README.md
 root.mark
-
-{{ if (stat (joinPath .chezmoi.homeDir ".is_airgapped")) -}}
-.chezmoiexternal.toml
-run_once_before_install-packages-darwin.sh.tmpl
-{{ else -}}
-{{ end -}}
