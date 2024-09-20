@@ -7,3 +7,6 @@
 
 [template]
   options = ["missingkey=zero"]
+
+[data]
+  isAirgapped = {{ if (stat (joinPath .chezmoi.homeDir ".is_airgapped")) }}true{{ else }}false{{ end }}

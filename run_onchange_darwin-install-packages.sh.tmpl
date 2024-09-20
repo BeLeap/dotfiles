@@ -1,3 +1,4 @@
+{{- if (template "is_airgapped" .) -}}
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
@@ -12,4 +13,5 @@ brew {{ .name | quote }} {{ default "" .extra }}
 cask {{ .name | quote }}
 {{ end -}}
 EOF
+{{ end -}}
 {{ end -}}
