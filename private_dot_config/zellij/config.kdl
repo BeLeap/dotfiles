@@ -1,9 +1,6 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
-    unbind "Ctrl o"
-    unbind "Ctrl p"
-    unbind "Ctrl n"
-    normal {
+    normal clear-defaults=true {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
         bind "Ctrl a" { SwitchToMode "Tmux"; }
@@ -71,6 +68,9 @@ keybinds {
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
         bind "Tab" { ToggleTab; }
+        bind "e" { EditScrollback; SwitchToMode "Normal"; }
+        bind "m" { SwitchToMode "move"; }
+        bind "=" { SwitchToMode "resize"; }
     }
     scroll {
         bind "Ctrl s" { SwitchToMode "Normal"; }
