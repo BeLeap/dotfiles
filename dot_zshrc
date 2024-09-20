@@ -37,11 +37,14 @@ fi
 export PATH=$HOME/Library/Android/sdk/platform-tools:$HOME/.local/bin:/opt/homebrew/bin:$PATH
 export LC_ALL="en_US.UTF-8"
 
-alias k="kubectl"
-
-alias ls="lsd"
-alias ll="lsd -l"
-alias lla="lsd -al"
+if [[ ! -z "$(command -v lsd)" ]]; then
+  alias ls="lsd"
+  alias ll="lsd -l"
+  alias lla="lsd -al"
+else
+  alias ll="ls -l"
+  alias lla="ls -al"
+fi
 
 alias ezsh="e $HOME/.zshrc"
 alias sozsh=". $HOME/.zshrc"
