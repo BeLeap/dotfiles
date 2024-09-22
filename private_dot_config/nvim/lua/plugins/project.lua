@@ -18,7 +18,7 @@ return {
       require("project_nvim").setup({
         detection_methods = { "pattern", "lsp" },
         patterns = { ".nvim", "root.md", ".git" },
-        silent_chdir = false,
+        silent_chdir = true,
         show_hidden = true,
         excluder_dirs = {
           "*/node_modules/*",
