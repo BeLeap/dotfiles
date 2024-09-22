@@ -2,6 +2,7 @@ return {
 	{
 		"NeogitOrg/neogit",
 		cmd = "Neogit",
+    keys = {{ "<leader>ng", "<cmd>Neogit<cr>" }},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
