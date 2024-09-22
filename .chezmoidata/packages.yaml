@@ -59,6 +59,7 @@ packages:
       - name: "yaml-language-server"
       - name: "yq"
       - name: "rsteube/tap/carapace"
+      - name: "zoxide"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
