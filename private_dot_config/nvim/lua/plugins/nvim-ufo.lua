@@ -11,6 +11,7 @@ return {
       vim.o.foldcolumn = "1"
       vim.o.foldlevel = 9999
       vim.o.foldlevelstart = 9999
+      vim.o.foldmethod = "manual"
 
       vim.keymap.set("n", "zR", require("ufo").openAllFolds)
       vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
