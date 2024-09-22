@@ -16,7 +16,6 @@ if [[ -d "$HOME/.zinit" ]]; then
   zinit light zsh-users/zsh-syntax-highlighting
   zinit light zsh-users/zsh-autosuggestions
   zinit light joshskidmore/zsh-fzf-history-search
-  zinit load wfxr/forgit
 
   zinit ice depth=1
   zinit light jeffreytse/zsh-vi-mode
