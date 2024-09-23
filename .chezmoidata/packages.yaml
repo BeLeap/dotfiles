@@ -41,9 +41,7 @@ packages:
       - name: "lsd"
       - name: "mtr"
       - name: "ncdu"
-      # brew "neovim", args: ["HEAD"]
-      - name: "neovim"
-        extra: ', args: ["HEAD"]'
+      - name: "helix"
       - name: "oras"
       - name: "pstree"
       - name: "ripgrep"
