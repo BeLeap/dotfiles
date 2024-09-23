@@ -49,6 +49,9 @@ alias ezsh="e $HOME/.zshrc"
 alias sozsh=". $HOME/.zshrc"
 alias azsh="chezmoi add $HOME/.zshrc"
 
+if [[ ! -z "$(command -v kubectl-safe)" ]]; then
+  alias kubectl="kubectl safe"
+fi
 alias k="kubectl"
 alias ktx="kubectx"
 alias kns="kubens"
