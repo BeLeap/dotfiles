@@ -32,5 +32,5 @@
 [alias]
   adog = "log --all --decorate --oneline --graph"
 
-[includeIf "gitdir:~/work/"]
-  path = ~/work/.gitconfig
+[includeIf "gitdir:~/Projects/work"]
+  path = ~/Projects/work/.gitconfig
