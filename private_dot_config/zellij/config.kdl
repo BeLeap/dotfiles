@@ -40,7 +40,7 @@ keybinds {
             SwitchToMode "Normal"
         }
     }
-    tmux {
+    tmux clear-defaults=true {
         bind "[" { SwitchToMode "Scroll"; }
         bind "=" { SwitchToMode "Resize"; }
         bind "Ctrl a" { Write 2; SwitchToMode "Normal"; }
