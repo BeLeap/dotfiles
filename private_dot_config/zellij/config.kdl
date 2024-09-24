@@ -71,7 +71,8 @@ keybinds {
         bind "o" { FocusNextPane; }
         bind "d" { Detach; }
         bind "Space" { NextSwapLayout; }
-        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "x" { ToggleFloatingPanes; }
+        bind "f" { CloseFocus; SwitchToMode "Normal"; }
         bind "s" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
