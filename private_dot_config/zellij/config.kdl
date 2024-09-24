@@ -41,7 +41,6 @@ keybinds {
         }
     }
     tmux {
-        unbind "f"
         bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "[" { SwitchToMode "Scroll"; }
         bind "=" { SwitchToMode "Resize"; }
@@ -74,7 +73,6 @@ keybinds {
         bind "d" { Detach; }
         bind "Space" { NextSwapLayout; }
         bind "x" { ToggleFloatingPanes; SwitchToMode "Normal"; }
-        bind "f" { CloseFocus; SwitchToMode "Normal"; }
         bind "s" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
