@@ -41,6 +41,8 @@ keybinds {
         }
     }
     tmux {
+        unbind "f"
+        bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "[" { SwitchToMode "Scroll"; }
         bind "=" { SwitchToMode "Resize"; }
         bind "Ctrl a" { Write 2; SwitchToMode "Normal"; }
