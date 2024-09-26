@@ -21,6 +21,7 @@ keybinds {
     }
     scroll {
         bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
         bind "e" { EditScrollback; SwitchToMode "Normal"; }
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "j" "Down" { ScrollDown; }
