@@ -58,6 +58,7 @@ packages:
       - name: "yq"
       - name: "rsteube/tap/carapace"
       - name: "zoxide"
+      - name: "beleap/tap/kubectl-check"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
