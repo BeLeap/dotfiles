@@ -59,6 +59,7 @@ packages:
       - name: "rsteube/tap/carapace"
       - name: "zoxide"
       - name: "beleap/tap/kubectl-check"
+      - name: "zellij"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
