@@ -8,7 +8,7 @@ size = 18
 
 [window]
 padding = { x = 10, y = 10 }
-startup_mode = "Fullscreen"
+startup_mode = "Maximized"
 decorations = "Buttonless"
 
 [keyboard]
