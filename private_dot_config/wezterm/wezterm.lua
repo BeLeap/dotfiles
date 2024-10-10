@@ -8,7 +8,7 @@ config.automatically_reload_config = true
 config.font = wezterm.font 'Cascadia Code'
 config.font_size = 17
 
-config.color_scheme = 'Nord'
+config.color_scheme = 'nord'
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 
