@@ -54,7 +54,7 @@ set_alias_if_exists capply chezmoi "chezmoi apply"
 
 set_alias_if_exists zj zellij "zellij"
 
-if [[ ! -z "$(command -v starship)" ]]; then
+if [[ command_exists starship ]]; then
   eval "$(starship init zsh)"
 fi
 
