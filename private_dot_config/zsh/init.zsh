@@ -1,4 +1,4 @@
-source $ZSH_CNONFIG_PATH/util.zsh
+source $ZSH_CONFIG_PATH/util.zsh
 
 autoload -Uz compinit && compinit
 
