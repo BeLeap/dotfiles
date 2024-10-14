@@ -56,6 +56,7 @@ alias cdiff="chezmoi diff"
 alias cadd="chezmoi add"
 alias cupdate="chezmoi update"
 alias cedit="chezmoi edit"
+alias capply="chezmoi apply"
 
 if [[ ! -z "$(command -v gh)" ]]; then
   alias prcm="gh pr create --assignee @me"
