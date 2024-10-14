@@ -54,7 +54,7 @@ set_alias_if_exists capply chezmoi "chezmoi apply"
 
 set_alias_if_exists zj zellij "zellij"
 
-if command_exists starshipxxx; then
+if command_exists starship; then
   eval "$(starship init zsh)"
 fi
 
@@ -62,19 +62,19 @@ if [[ -d "$HOME/.asdf" ]]; then
   . "$HOME/.asdf/asdf.sh"
 fi
 
-if [[ ! -z "$(command -v zoxide)" ]]; then
+if command_exists zoxide; then
   eval "$(zoxide init zsh)"
 else
   . $HOME/.scripts/z.sh
 fi
 
-if [[ ! -z "$(command -v carapace)" ]]; then
+if command_exists carapace; then
   export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
   zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
   source <(carapace _carapace)
 fi
 
-if [[ ! -z "$(command -v direnv)" ]]; then
+if command_exists direnv; then
   eval "$(direnv hook zsh)"
 fi
 
