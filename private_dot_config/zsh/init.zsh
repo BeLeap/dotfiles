@@ -33,13 +33,12 @@ fi
 
 alias e="$EDITOR"
 
-set_alias_if_exists ls lsd "lsd"
+set_alias_if_exists ls lsda "lsd"
 set_alias_if_exists ll lsd "lsd -l" "ls -l"
 set_alias_if_exists lla lsd "lsd -al" "ls -al"
 
 alias ezsh="e $HOME/.zshrc"
 alias sozsh=". $HOME/.zshrc"
-alias azsh="chezmoi add $HOME/.zshrc"
 
 if [[ ! -z "$(command -v kubectl-check)" ]]; then
   alias k="kubectl check"
@@ -49,7 +48,7 @@ alias kns="kubens"
 alias ku="k9s"
 alias kh="k9s --headless"
 
-alias cdiff="chezmoi diff"
+set_alias_if_exists cdiff chezmoi "chezmoi diff"
 alias cadd="chezmoi add"
 alias cupdate="chezmoi update"
 alias cedit="chezmoi edit"
