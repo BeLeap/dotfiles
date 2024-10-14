@@ -40,12 +40,6 @@ set_alias_if_exists lla lsd "lsd -al" "ls -al"
 alias ezsh="e $HOME/.zshrc"
 alias sozsh=". $HOME/.zshrc"
 
-set_alias_if_exists k kubectl-check "kubectl check" "kubectl"
-set_alias_if_exists ktx kubectx kubectxl
-set_alias_if_exists ktx kubens kubens
-set_alias_if_exists ku k9s "k9s"
-set_alias_if_exists kh k9s "k9s --headless"
-
 set_alias_if_exists cdiff chezmoi "chezmoi diff"
 set_alias_if_exists cadd chezmoi "chezmoi add"
 set_alias_if_exists cupdate chezmoi "chezmoi update"
@@ -79,3 +73,4 @@ if command_exists direnv; then
 fi
 
 source $ZSH_CONFIG_PATH/git.zsh
+source $ZSH_CONFIG_PATH/kubernetes.zsh
