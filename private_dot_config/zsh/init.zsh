@@ -5,7 +5,8 @@ if [[ ! -z "$(command -v hx)" ]]; then
 else
   export EDITOR="vim"
 fi
-alias e="$EDITOR"
+export PATH=$HOME/Library/Android/sdk/platform-tools:$HOME/go/bin:$HOME/.local/bin:/opt/homebrew/bin:$PATH
+export LC_ALL="en_US.UTF-8"
 
 if [[ -d "$HOME/.zinit" ]]; then
   export ZINIT_HOME="$HOME/.zinit"
@@ -28,10 +29,7 @@ else
   bindkey ^S history-incremental-search-forward
 fi
 
-export PATH=$HOME/Library/Android/sdk/platform-tools:$HOME/go/bin:$HOME/.local/bin:/opt/homebrew/bin:$PATH
-export LC_ALL="en_US.UTF-8"
-
-source $ZSH_CONFIG_PATH/git.zsh
+alias e="$EDITOR"
 
 if [[ ! -z "$(command -v lsd)" ]]; then
   alias ls="lsd"
@@ -85,3 +83,5 @@ fi
 if [[ ! -z "$(command -v direnv)" ]]; then
   eval "$(direnv hook zsh)"
 fi
+
+source $ZSH_CONFIG_PATH/git.zsh
