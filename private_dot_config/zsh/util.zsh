@@ -1,4 +1,4 @@
-set_alias_if_exists() {
+function set_alias_if_exists() {
   local alias_cmd=$1
   local binary=$2
   local preferred_cmd=$3
