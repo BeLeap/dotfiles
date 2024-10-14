@@ -33,7 +33,7 @@ fi
 
 alias e="$EDITOR"
 
-set_alias_if_exists ls lsda "lsd"
+set_alias_if_exists ls lsd "lsd"
 set_alias_if_exists ll lsd "lsd -l" "ls -l"
 set_alias_if_exists lla lsd "lsd -al" "ls -al"
 
