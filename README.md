@@ -3,5 +3,5 @@
 https://chezmoi.io
 
 ```sh
-chezmoi init git@git.sr.ht:~beleap/dotfiles
+chezmoi init https://git.sr.ht/~beleap/dotfiles
 ```
