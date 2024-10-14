@@ -1,3 +1,5 @@
+source $ZSH_CNONFIG_PATH/util.zsh
+
 autoload -Uz compinit && compinit
 
 if [[ ! -z "$(command -v hx)" ]]; then
