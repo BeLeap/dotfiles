@@ -35,7 +35,7 @@ alias e="$EDITOR"
 
 set_alias_if_exists ls lsd "lsd"
 set_alias_if_exists ll lsd "lsd -l" "ls -l"
-set_alias_if_exsits lla lsd "lsd -al" "ls -al"
+set_alias_if_exists lla lsd "lsd -al" "ls -al"
 
 alias ezsh="e $HOME/.zshrc"
 alias sozsh=". $HOME/.zshrc"
