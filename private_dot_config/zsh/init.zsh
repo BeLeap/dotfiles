@@ -40,21 +40,19 @@ set_alias_if_exists lla lsd "lsd -al" "ls -al"
 alias ezsh="e $HOME/.zshrc"
 alias sozsh=". $HOME/.zshrc"
 
-if [[ ! -z "$(command -v kubectl-check)" ]]; then
-  alias k="kubectl check"
-fi
-alias ktx="kubectx"
-alias kns="kubens"
-alias ku="k9s"
-alias kh="k9s --headless"
+set_alias_if_exists k kubectl-check "kubectl check" "kubectl"
+set_alias_if_exists ktx kubectx kubectxl
+set_alias_if_exists ktx kubens kubens
+set_alias_if_exists ku k9s "k9s"
+set_alias_if_exists kh k9s "k9s --headless"
 
 set_alias_if_exists cdiff chezmoi "chezmoi diff"
-alias cadd="chezmoi add"
-alias cupdate="chezmoi update"
-alias cedit="chezmoi edit"
-alias capply="chezmoi apply"
+set_alias_if_exists cadd chezmoi "chezmoi add"
+set_alias_if_exists cupdate chezmoi "chezmoi update"
+set_alias_if_exists cedit chezmoi "chezmoi edit"
+set_alias_if_exists capply chezmoi "chezmoi apply"
 
-alias zj="zellij"
+set_alias_if_exists zj zellij "zellij"
 
 if [[ ! -z "$(command -v starship)" ]]; then
   eval "$(starship init zsh)"
