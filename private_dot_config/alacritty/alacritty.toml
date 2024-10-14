@@ -1,5 +1,5 @@
 import = [
-    "~/.config/alacritty/themes/gurvbox.toml"
+    "~/.config/alacritty/themes/gurvbox_material.toml"
 ]
 
 [font]
