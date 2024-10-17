@@ -5,18 +5,18 @@ if [[ ! -z "$(command -v gh)" ]]; then
   alias prm="gh pr merge"
   alias prmd="gh pr merge -d"
 
-    function create_rc_pr() {
-        branch=$(git branch --list master main | head -n 1 | awk '{print $1}')
-        if [ -z "$branch" ]; then
-            echo "Neither master nor main branch exists."
-            return 1
-        fi
+  function create_rc_pr() {
+      branch=$(git branch --list master main | head -n 1 | awk '{print $1}')
+      if [ -z "$branch" ]; then
+          echo "Neither master nor main branch exists."
+          return 1
+      fi
 
-        echo "Creating RC PR to branch: $branch"
+      echo "Creating RC PR to branch: $branch"
 
-        gh pr create --assignee @me --base $branch --title "RC" --body "RC $(date -u +%Y-%m-%dT%H:%M:%S)"
-    }
-    alias crcpr="create_rc_pr"
+      gh pr create --assignee @me --base $branch --title "RC" --body "RC $(date -u +%Y-%m-%dT%H:%M:%S)"
+  }
+  alias crcpr="create_rc_pr"
 fi
 
 alias gc="git commit"
@@ -56,3 +56,12 @@ function gpc() {
   rm -f $temp_file
 }
 
+ggr() {
+  local git_root
+  git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [ -n "$git_root" ]; then
+    cd "$git_root"
+  else
+    echo "No git root found"
+  fi
+}
