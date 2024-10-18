@@ -72,5 +72,14 @@ if command_exists direnv; then
   eval "$(direnv hook zsh)"
 fi
 
+if command_exists fzf; then
+  # cdf - cd into the directory of the selected file
+  cdf() {
+     local file
+     local dir
+     file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+  }
+fi
+
 source $ZSH_CONFIG_PATH/git.zsh
 source $ZSH_CONFIG_PATH/kubernetes.zsh
