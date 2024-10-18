@@ -28,6 +28,7 @@ alias glp="git pull --rebase && git push"
 alias ga="git add"
 alias gco="git checkout"
 alias gd="git diff"
+alias gf="git fetch --all --prune"
 
 # gpc: git prefix commit
 function gpc() {
