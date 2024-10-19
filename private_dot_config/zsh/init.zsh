@@ -80,10 +80,28 @@ if command_exists fzf; then
      file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
   }
 
-  runcmd (){ perl -e 'ioctl STDOUT, 0x5412, $_ for split //, <>' ; }
+  # re-wrote the script above
+  bind '"\C-r": "\C-x1\e^\er"'
+  bind -x '"\C-x1": __fzf_history';
 
-  fh() {
-    ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -re 's/^\s*[0-9]+\s*//' | runcmd
+  __fzf_history ()
+  {
+    __ehc $(history | fzf --tac --tiebreak=index | perl -ne 'm/^\s*([0-9]+)/ and print "!$1"')
+  }
+
+  __ehc()
+  {
+    if
+      [[ -n $1 ]]
+    then
+      bind '"\er": redraw-current-line'
+      bind '"\e^": magic-space'
+      READLINE_LINE=${READLINE_LINE:+${READLINE_LINE:0:READLINE_POINT}}${1}${READLINE_LINE:+${READLINE_LINE:READLINE_POINT}}
+      READLINE_POINT=$(( READLINE_POINT + ${#1} ))
+    else
+      bind '"\er":'
+      bind '"\e^":'
+    fi
   }
 fi
 
