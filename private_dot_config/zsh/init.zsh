@@ -79,6 +79,12 @@ if command_exists fzf; then
      local dir
      file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
   }
+
+  runcmd (){ perl -e 'ioctl STDOUT, 0x5412, $_ for split //, <>' ; }
+
+  fh() {
+    ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -re 's/^\s*[0-9]+\s*//' | runcmd
+  }
 fi
 
 source $ZSH_CONFIG_PATH/git.zsh
