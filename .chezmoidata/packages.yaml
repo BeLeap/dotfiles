@@ -60,6 +60,7 @@ packages:
       - name: "zoxide"
       - name: "beleap/tap/kubectl-check"
       - name: "zellij"
+      - name: "bottom"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
