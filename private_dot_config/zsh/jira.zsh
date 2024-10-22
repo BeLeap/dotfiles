@@ -8,7 +8,7 @@ if command_exists jira; then
     local jira_issues=$(jira issue list --jql "$jql_query" --plain --no-headers --columns KEY,SUMMARY | fzf)
 
     # 선택된 티켓의 키(ID)를 추출합니다.
-    local issue_key=$(echo "$jira_issues" | cut -d" " -f1)
+    local issue_key=$(echo "$jira_issues" | awk '{print $1}')
 
     # 브랜치 이름을 설정합니다 (예: feature/ISSUE-123-description).
     if [ -n "$issue_key" ]; then
