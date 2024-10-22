@@ -83,5 +83,9 @@ if command_exists fzf; then
   }
 fi
 
+if command_exists asdf; then
+  . ~/.asdf/plugins/java/set-java-home.zsh
+fi
+
 source $ZSH_CONFIG_PATH/git.zsh
 source $ZSH_CONFIG_PATH/kubernetes.zsh
