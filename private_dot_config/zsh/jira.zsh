@@ -12,9 +12,7 @@ if command_exists jira; then
 
     # 브랜치 이름을 설정합니다 (예: feature/ISSUE-123-description).
     if [ -n "$issue_key" ]; then
-      local branch_name="feature/${issue_key}"
-      echo "Creating branch: $branch_name"
-      git checkout -b "$branch_name"
+      git checkout -b "$issue_key"
     else
       echo "No issue selected. Aborting branch creation."
     fi
