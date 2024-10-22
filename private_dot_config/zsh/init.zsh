@@ -84,7 +84,9 @@ if command_exists fzf; then
 fi
 
 if command_exists asdf; then
-  . ~/.asdf/plugins/java/set-java-home.zsh
+  if [[ -f "$HOME/.asdf/plugins/java/set-java-home.zsh" ]]; then
+    . ~/.asdf/plugins/java/set-java-home.zsh
+  fi
 fi
 
 source $ZSH_CONFIG_PATH/git.zsh
