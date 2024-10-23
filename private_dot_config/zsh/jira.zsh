@@ -17,5 +17,5 @@ if command_exists jira; then
       echo "No issue selected. Aborting branch creation."
     fi
   }
-  alias cbfj="create_rc_pr"
+  alias cbfj="create_branch_from_jira"
 fi
