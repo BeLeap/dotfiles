@@ -51,7 +51,7 @@ function gpc() {
   echo "[${issue}] " > $temp_file
 
   # git commit -v로 diff와 함께 편집기 열기
-  git commit -v -e --file=$temp_file
+  git commit -v -e --file=$temp_file $@
 
   # 임시 파일 삭제
   rm -f $temp_file
