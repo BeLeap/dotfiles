@@ -1,6 +1,6 @@
 if command_exists jira; then
   function create_branch_from_jira() {
-    local jql_query="assignee = currentUser() AND status IN ('To Do', 'In Progress', 'In Review')"
+    local jql_query="assignee = currentUser() AND status NOT IN ('Done')"
     local jira_issues=$(jira issue list --jql "$jql_query" --plain --no-headers --columns KEY,SUMMARY | fzf)
     local issue_key=$(echo "$jira_issues" | awk '{print $1}')
 
