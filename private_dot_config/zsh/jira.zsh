@@ -5,7 +5,14 @@ if command_exists jira; then
     local issue_key=$(echo "$jira_issues" | awk '{print $1}')
 
     if [ -n "$issue_key" ]; then
-      git checkout -b "$issue_key"
+      local existing_branch=$(git branch --list "$issue_key*" | head -n 1)
+      if [ -n "$existing_branch" ]; then
+        echo "Branch '$existing_branch' already exists. Checking out."
+        git checkout "$existing_branch"
+      else
+        echo "Creating new branch '$issue_key'."
+        git checkout -b "$issue_key"
+      fi
     else
       echo "No issue selected. Aborting branch creation."
     fi
