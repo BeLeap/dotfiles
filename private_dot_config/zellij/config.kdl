@@ -124,6 +124,7 @@ themes {
 theme "gruvbox-dark"
 default_layout "compact"
 copy_on_select true
+session_serialization false
 // The folder in which Zellij will look for themes
 //
 // theme_dir "/path/to/my/theme_dir"
