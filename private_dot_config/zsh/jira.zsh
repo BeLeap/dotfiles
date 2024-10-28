@@ -1,8 +1,14 @@
 if command_exists jira; then
-  function create_branch_from_jira() {
+  function select_jira_issue() {
     local jql_query="assignee = currentUser() AND status NOT IN ('Done')"
     local jira_issues=$(jira issue list --jql "$jql_query" --plain --no-headers --columns KEY,SUMMARY | fzf)
     local issue_key=$(echo "$jira_issues" | awk '{print $1}')
+
+    return $issue_key
+  }
+
+  function create_branch_from_jira() {
+    local issue_key=select_jira_issue()
 
     if [ -n "$issue_key" ]; then
       local existing_branch=$(git branch --list "$issue_key*" | head -n 1 | xargs)
@@ -18,4 +24,10 @@ if command_exists jira; then
     fi
   }
   alias cbfj="create_branch_from_jira"
+
+  function create_tmux_session_from_jira() {
+    local issue_key=select_jira_issue()
+    tmux new-session -A -s $issue_key
+  }
+  alias csfj="create_tmux_session_from_jira"
 fi
