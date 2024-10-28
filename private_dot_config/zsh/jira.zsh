@@ -28,7 +28,13 @@ if command_exists jira; then
   function create_tmux_session_from_jira() {
     local issue_key=$(select_jira_issue)
 
-    tmux switch -t $issue_key
+    tmux has-session -t $issue_key 2>/dev/null
+
+    if [ $? != 0 ]; then
+      tmux new-session -d -s $issue_key
+    fi
+
+    tmux switch-client -t $issue_key
   }
   alias csfj="create_tmux_session_from_jira"
 fi
