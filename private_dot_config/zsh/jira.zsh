@@ -11,7 +11,7 @@ if command_exists jira; then
     local issue_key=$(select_jira_issue)
 
     if [[ -z "$issue_key" ]]; then
-      exit 1
+      return 1
     fi
 
     if [ -n "$issue_key" ]; then
@@ -33,7 +33,7 @@ if command_exists jira; then
     local issue_key=$(select_jira_issue)
 
     if [[ -z "$issue_key" ]]; then
-      exit 1
+      return 1
     fi
 
     tmux has-session -t $issue_key 2>/dev/null
