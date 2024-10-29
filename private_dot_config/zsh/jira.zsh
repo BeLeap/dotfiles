@@ -31,7 +31,6 @@ if command_exists jira; then
 
   function create_tmux_session_from_jira() {
     local issue_key=$(select_jira_issue)
-
     if [[ -z "$issue_key" ]]; then
       return 1
     fi
