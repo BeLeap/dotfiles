@@ -23,3 +23,6 @@ display-inlay-hints = true
 
 [editor.whitespace.render]
 tab = "all"
+
+[editor.indent-guides]
+render = true
