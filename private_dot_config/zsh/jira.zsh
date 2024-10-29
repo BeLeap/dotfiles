@@ -4,10 +4,6 @@ if command_exists jira; then
     local jira_issues=$(jira issue list --jql "$jql_query" --order-by status --plain --no-headers --columns KEY,SUMMARY | fzf)
     local issue_key=$(echo "$jira_issues" | awk '{print $1}')
 
-    if [[ -z "$issue_key" ]]; then
-      exit 1
-    fi
-
     echo "$issue_key"
   }
 
@@ -37,6 +33,10 @@ if command_exists jira; then
     local issue_key=$(select_jira_issue)
     if [[ -z "$issue_key" ]]; then
       return 1
+    fi
+
+    if [[ -z "$issue_key" ]]; then
+      exit 1
     fi
 
     tmux has-session -t $issue_key 2>/dev/null
