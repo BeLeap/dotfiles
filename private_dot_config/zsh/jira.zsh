@@ -30,6 +30,7 @@ if command_exists jira; then
   alias cbfj="create_branch_from_jira"
 
   function create_tmux_session_from_jira() {
+<<<<<<< HEAD
     local issue_key=$(select_jira_issue)
 
     if [[ -z "$issue_key" ]]; then
@@ -43,6 +44,10 @@ if command_exists jira; then
     fi
 
     tmux switch-client -t $issue_key
+=======
+    local issue_key=select_jira_issue()
+    tmux new-session -A -s $issue_key
+>>>>>>> Update .config/zsh/jira.zsh
   }
   alias csfj="create_tmux_session_from_jira"
 fi
