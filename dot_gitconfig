@@ -34,3 +34,5 @@
 
 [includeIf "gitdir:~/Projects/work/"]
   path = ~/Projects/work/.gitconfig
+[pack]
+	usePathWalk = true
