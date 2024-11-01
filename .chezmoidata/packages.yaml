@@ -29,7 +29,7 @@ packages:
       - name: "graphviz"
       - name: "grep"
       - name: "helm"
-      - name: "hwatch"
+      - name: "viddy"
       - name: "ipcalc"
       - name: "istioctl"
       - name: "jq"
