@@ -17,6 +17,28 @@ if [[ ! -z "$(command -v gh)" ]]; then
       gh pr create --assignee @me --base $branch --title "RC" --body "RC $(date -u +%Y-%m-%dT%H:%M:%S)"
   }
   alias crcpr="create_rc_pr"
+
+  function create_branch_from_issue() {
+    local issue_key=$(gh issue list --assignee "@me" --json "number" --json "title" | yq '.[] | "\(.number) \(.title)"' | fzf | awk '{print $1}')
+    local issue_key="#$issue_key"
+
+    if [[ -z "$issue_key" ]]; then
+      return 1
+    fi
+
+    if [ -n "$issue_key" ]; then
+      local existing_branch=$(git branch --list "$issue_key*" | head -n 1 | xargs)
+      if [ -n "$existing_branch" ]; then
+        echo "Branch '$existing_branch' already exists. Checking out."
+        git checkout "$existing_branch"
+      else
+        echo "Creating new branch '$issue_key'."
+        git checkout -b "$issue_key"
+      fi
+    else
+      echo "No issue selected. Aborting branch creation."
+    fi
+  }
 fi
 
 alias gc="git commit"
