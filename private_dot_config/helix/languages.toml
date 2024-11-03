@@ -17,13 +17,6 @@ model = "deepseek-coder"
 model = "model1"
 
 [[language]]
-name = "all-files"
-scope = ""
-file-types = [{glob="*"}]
-language-servers = ["lsp-ai"]
-
-
-[[language]]
 name = "javascript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 auto-format = true
@@ -42,6 +35,12 @@ language-servers = [ { name = "typescript-language-server", except-features = [ 
 name = "jsx"
 auto-format = true
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = [ "rust-analyzer", "lsp-ai" ]
+
 
 [[language]]
 name = "json"
