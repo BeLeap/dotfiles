@@ -6,6 +6,9 @@ required-root-patterns = ["biome.json"]
 [language-server.lsp-ai]
 command = "lsp-ai"
 
+[language-server.lsp-ai.config.memory]
+file_store = { }
+
 [language-server.lsp-ai.config.models.model1]
 type = "ollama"
 model = "deepseek-coder"
