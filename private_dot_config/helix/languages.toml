@@ -17,13 +17,20 @@ model = "deepseek-coder"
 model = "model1"
 
 [[language]]
+name = "all-files"
+scope = ""
+file-types = [{glob="*"}]
+language-servers = ["lsp-ai"]
+
+
+[[language]]
 name = "javascript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 auto-format = true
 
 [[language]]
 name = "typescript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "lsp-ai" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 auto-format = true
 
 [[language]]
