@@ -10,6 +10,9 @@ command = "lsp-ai"
 type = "ollama"
 model = "deepseek-coder"
 
+[language-server.lsp-ai.config.completion]
+model = "model1"
+
 [[language]]
 name = "javascript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
