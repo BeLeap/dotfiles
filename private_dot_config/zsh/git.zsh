@@ -39,6 +39,7 @@ if [[ ! -z "$(command -v gh)" ]]; then
       echo "No issue selected. Aborting branch creation."
     fi
   }
+  alias cbfi="create_branch_from_issue"
 fi
 
 alias gc="git commit"
