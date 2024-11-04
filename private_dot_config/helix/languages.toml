@@ -41,6 +41,9 @@ name = "rust"
 auto-format = true
 language-servers = [ "rust-analyzer", "lsp-ai" ]
 
+[[language]]
+name = "go"
+auto-format = true
 
 [[language]]
 name = "json"
