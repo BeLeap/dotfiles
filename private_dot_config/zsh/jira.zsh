@@ -39,7 +39,13 @@ if command_exists jira; then
       return 1
     fi
 
-    zellij attach --create $issue_key
+    tmux has-session -t $issue_key 2>/dev/null
+
+    if [ $? != 0 ]; then
+      tmux new-session -d -s $issue_key
+    fi
+
+    tmux switch-client -t $issue_key
   }
   alias csfj="create_session_from_jira"
 fi
