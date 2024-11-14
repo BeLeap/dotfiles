@@ -46,7 +46,27 @@ set_alias_if_exists cupdate chezmoi "chezmoi update"
 set_alias_if_exists cedit chezmoi "chezmoi edit"
 set_alias_if_exists capply chezmoi "chezmoi apply"
 
-set_alias_if_exists zj zellij "zellij"
+if command_exists zellij; then
+  function zj() {
+    while true; do
+       ZJ_SESSIONS=$(zellij list-sessions)
+       NO_SESSIONS=$(echo "${ZJ_SESSIONS}"  wc -l)
+
+       if [ "${NO_SESSIONS}" -ge 2 ]; then
+          SESSION=$(echo "${ZJ_SESSIONS}"  | fzf)
+          if [ $? -eq 0 ]; then
+             zellij attach $SESSION
+          else
+             exit 0
+          fi
+       else
+          SESSION=$ZJ_SESSIONS
+          zellij attach -c
+       fi
+       echo "detach/quit SESSION=$SESSION"
+    done       
+  }
+fi
 
 if command_exists starship; then
   eval "$(starship init zsh)"
