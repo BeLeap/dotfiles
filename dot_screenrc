@@ -1,4 +1,0 @@
-startup_message off
-hardstatus alwayslastline
-hardstatus string "[screen %n: %t] %h"
-
