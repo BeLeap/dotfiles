@@ -53,7 +53,7 @@ if command_exists zellij; then
        NO_SESSIONS=$(echo "${ZJ_SESSIONS}"  wc -l)
 
        if [ "${NO_SESSIONS}" -ge 2 ]; then
-          SESSION=$(echo "${ZJ_SESSIONS}"  | fzf)
+          SESSION=$(echo "${ZJ_SESSIONS}" | fzf)
           if [ $? -eq 0 ]; then
              zellij attach $SESSION
           else
