@@ -20,13 +20,13 @@ if [[ ! -z "$(command -v gh)" ]]; then
 
   function create_branch_from_issue() {
     local issue_key=$(gh issue list --assignee "@me" --json "number" --json "title" | yq '.[] | "\(.number) \(.title)"' | fzf | awk '{print $1}')
-    local issue_key="#$issue_key"
 
     if [[ -z "$issue_key" ]]; then
       return 1
     fi
 
     if [ -n "$issue_key" ]; then
+      local issue_key="#$issue_key"
       local existing_branch=$(git branch --list "$issue_key*" | head -n 1 | xargs)
       if [ -n "$existing_branch" ]; then
         echo "Branch '$existing_branch' already exists. Checking out."
