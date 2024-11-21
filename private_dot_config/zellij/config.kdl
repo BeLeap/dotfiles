@@ -119,7 +119,7 @@ themes {
         white 251 241 199
         orange 214 93 14
     }
-    nord {
+    nord-custom {
         fg 216 222 233 // #D8DEE9
         bg 46 52 64 // #2E3440
         black 59 66 82 // #3B4252
@@ -134,7 +134,7 @@ themes {
     }
 }
 
-theme "nord"
+theme "nord-custom"
 default_layout "compact"
 copy_on_select true
 session_serialization false
