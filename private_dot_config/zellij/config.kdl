@@ -121,7 +121,8 @@ themes {
     }
     nord-custom {
         fg 216 222 233 // #D8DEE9
-        bg 46 52 64 // #2E3440
+        // bg 46 52 64 // #2E3440
+        bg 86 78 41
         black 59 66 82 // #3B4252
         red 191 97 106 // #BF616A
         green 163 190 140 // #A3BE8C
