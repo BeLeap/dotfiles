@@ -5,16 +5,21 @@ required-root-patterns = ["biome.json"]
 
 [language-server.lsp-ai]
 command = "lsp-ai"
-
 [language-server.lsp-ai.config.memory]
 file_store = { }
-
 [language-server.lsp-ai.config.models.deepseek-coder]
 type = "ollama"
 model = "deepseek-coder:1.3b-base"
-
 [language-server.lsp-ai.config.completion]
 model = "deepseek-coder"
+[language-server.lsp-ai.config.completion.parameters]
+max_context = 2000
+[language-server.lsp-ai.config.completion.options]
+num_predict = 32
+[language-server.lsp-ai.config.completion.parameters.fim]
+start = "<｜fim▁begin｜>"
+middle = "<｜fim▁hole｜>"
+end = "<｜fim▁end｜>"
 
 [[language]]
 name = "javascript"
