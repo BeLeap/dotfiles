@@ -11,7 +11,7 @@ file_store = { }
 
 [language-server.lsp-ai.config.models.deepseek-coder]
 type = "ollama"
-model = "deepseek-coder"
+model = "deepseek-coder:1.3b-base"
 
 [language-server.lsp-ai.config.completion]
 model = "deepseek-coder"
