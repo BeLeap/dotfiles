@@ -9,12 +9,12 @@ command = "lsp-ai"
 [language-server.lsp-ai.config.memory]
 file_store = { }
 
-[language-server.lsp-ai.config.models.model1]
+[language-server.lsp-ai.config.models.deepseek-coder]
 type = "ollama"
 model = "deepseek-coder"
 
 [language-server.lsp-ai.config.completion]
-model = "model1"
+model = "deepseek-coder"
 
 [[language]]
 name = "javascript"
