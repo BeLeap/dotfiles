@@ -62,7 +62,6 @@ keybinds {
         bind "d" { Detach; }
         bind "q" { CloseTab; }
         bind "Space" { NextSwapLayout; }
-        bind "x" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "s" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
