@@ -28,7 +28,7 @@ keybinds {
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
     }
-    tmux {
+    tmux clear-defaults=true {
         bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "[" { SwitchToMode "Scroll"; }
         bind "=" { SwitchToMode "Resize"; }
