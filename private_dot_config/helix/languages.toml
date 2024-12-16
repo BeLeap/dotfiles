@@ -21,7 +21,7 @@ start = "<｜fim▁begin｜>"
 middle = "<｜fim▁hole｜>"
 end = "<｜fim▁end｜>"
 
-[language-server.golangci-lint.config]
+[language-server.golangci-lint]
 command = "golangci-lint-langserver" 
 args = ["run", "--out-format", "json", "--issues-exit-code=1"]
 
