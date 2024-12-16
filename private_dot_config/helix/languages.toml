@@ -21,6 +21,9 @@ start = "<｜fim▁begin｜>"
 middle = "<｜fim▁hole｜>"
 end = "<｜fim▁end｜>"
 
+[language-server.golangci-lint.config]
+command = ["golangci-lint-langserver", "run", "--out-format", "json", "--issues-exit-code=1"]
+
 [[language]]
 name = "javascript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "lsp-ai" ]
@@ -48,7 +51,7 @@ language-servers = [ "rust-analyzer", "lsp-ai" ]
 
 [[language]]
 name = "go"
-language-servers = [ "gopls", "golangci-lint-langserver", "lsp-ai" ]
+language-servers = [ "gopls", "golangci-lint", "lsp-ai" ]
 auto-format = true
 
 [[language]]
