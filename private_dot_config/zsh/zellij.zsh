@@ -13,4 +13,8 @@ if command_exists zellij; then
 
   zellij_tab_name_update
   chpwd_functions+=(zellij_tab_name_update)
+
+  zj_cleanup() {
+      zeliij list-sessions -n | grep -v current | awk '{print $1}' | xargs -I % zellij kill-session %
+  }
 fi
