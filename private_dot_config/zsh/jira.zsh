@@ -1,6 +1,6 @@
 if command_exists jira; then
   function select_jira_issue() {
-    local jql_query="assignee = currentUser() AND status NOT IN ('Done','Wontfix')"
+    local jql_query="project IS NOT EMPTY AND assignee = currentUser() AND status NOT IN ('Done','Wontfix')"
     local jira_issues=$(jira issue list --jql "$jql_query" --order-by status --plain --no-headers --columns KEY,SUMMARY | fzf)
     local issue_key=$(echo "$jira_issues" | awk '{print $1}')
 
