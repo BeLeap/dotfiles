@@ -48,7 +48,7 @@ language-servers = [ "rust-analyzer", "lsp-ai" ]
 
 [[language]]
 name = "go"
-language-servers = [ "gopls", "golangci-lint-langserver", "lsp-ai" ]
+# language-servers = [ "gopls", "golangci-lint-langserver", "lsp-ai" ]
 auto-format = true
 
 [[language]]
