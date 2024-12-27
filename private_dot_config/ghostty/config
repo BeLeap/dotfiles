@@ -3,3 +3,5 @@ font-feature = "'ss01', 'ss02', 'ss03', 'ss19', 'ss20'"
 font-size = 18
 
 theme = "nord"
+
+window-padding-x = 2
