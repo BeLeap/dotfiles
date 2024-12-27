@@ -4,7 +4,6 @@ font-size = 18
 
 theme = "nord"
 
-fullscreen = true
 window-padding-x = 10
 window-title-font-family = "Cascadia Code NF"
 # Clamped to screen size so below works as maxmized
