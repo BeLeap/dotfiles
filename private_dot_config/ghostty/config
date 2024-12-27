@@ -4,4 +4,4 @@ font-size = 18
 
 theme = "nord"
 
-window-padding-x = 2
+window-padding-x = 10
