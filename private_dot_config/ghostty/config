@@ -7,4 +7,3 @@ theme = "nord"
 fullscreen = true
 window-padding-x = 10
 window-title-font-family = "Cascadia Code NF"
-macos-non-native-fullscreen = visible-menu
