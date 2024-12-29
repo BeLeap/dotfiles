@@ -135,7 +135,7 @@ themes {
     }
 }
 
-theme "nord-custom"
+theme "catppuccin-frappe"
 default_layout "compact"
 copy_on_select true
 session_serialization false
