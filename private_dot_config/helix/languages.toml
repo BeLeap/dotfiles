@@ -3,56 +3,38 @@ command = "biome"
 args = ["lsp-proxy"]
 required-root-patterns = ["biome.json"]
 
-[language-server.lsp-ai]
-command = "lsp-ai"
-[language-server.lsp-ai.config.memory]
-file_store = { }
-[language-server.lsp-ai.config.models.deepseek-coder]
-type = "ollama"
-model = "deepseek-coder:1.3b-base"
-[language-server.lsp-ai.config.completion]
-model = "deepseek-coder"
-[language-server.lsp-ai.config.completion.parameters]
-max_context = 2000
-[language-server.lsp-ai.config.completion.options]
-num_predict = 32
-[language-server.lsp-ai.config.completion.parameters.fim]
-start = "<｜fim▁begin｜>"
-middle = "<｜fim▁hole｜>"
-end = "<｜fim▁end｜>"
-
 [language-server.golangci-lint]
 command = "golangci-lint-langserver" 
 args = ["run", "--out-format", "json", "--issues-exit-code=1"]
 
 [[language]]
 name = "javascript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "lsp-ai" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 auto-format = true
 
 [[language]]
 name = "typescript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "lsp-ai" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 auto-format = true
 
 [[language]]
 name = "tsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "lsp-ai" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 
 [[language]]
 name = "jsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "lsp-ai" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 
 [[language]]
 name = "rust"
 auto-format = true
-language-servers = [ "rust-analyzer", "lsp-ai" ]
+language-servers = [ "rust-analyzer" ]
 
 [[language]]
 name = "go"
-language-servers = [ "gopls", "golangci-lint", "lsp-ai" ]
+language-servers = [ "gopls", "golangci-lint" ]
 auto-format = true
 
 [[language]]
