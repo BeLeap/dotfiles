@@ -6,7 +6,7 @@ font-size = 18
 theme = "catppuccin-frappe"
 
 window-padding-x = 10
-window-title-font-family = "MonaspiceNe Nerd Font"
+window-title-font-family = "Cascadia Code NF"
 # Clamped to screen size so below works as maxmized
 window-height = 99999
 window-width = 99999
