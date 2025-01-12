@@ -62,7 +62,7 @@ packages:
       - name: "beleap/tap/kubectl-check"
       - name: "zellij"
       - name: "bottom"
-      - name: "helm_ls"
+      - name: "helm-ls"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
