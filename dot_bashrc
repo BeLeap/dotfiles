@@ -7,4 +7,3 @@ alias ll="ls -l"
 alias sobash="source ~/.bashrc"
 
 . "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
