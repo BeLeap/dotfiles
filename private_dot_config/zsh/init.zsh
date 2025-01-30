@@ -55,10 +55,7 @@ fi
 if command_exists asdf; then
   export ASDF_DATA_DIR="$HOME/.asdf"
   export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-fi
-
-if [[ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]]; then
-  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+  . $(brew --prefix asdf)/asdf.sh
 fi
 
 if command_exists zoxide; then
