@@ -1,12 +1,5 @@
 {{- if .isAirgapped -}}
 {{- else -}}
-[".asdf"]
-    type = "git-repo"
-    url = "https://github.com/asdf-vm/asdf.git"
-    refreshPeriod = "168h"
-[".asdf".pull]
-    args = ["--ff-only"]
-
 [".zinit"]
     type = "git-repo"
     url = "https://github.com/zdharma-continuum/zinit.git"

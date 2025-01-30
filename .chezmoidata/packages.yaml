@@ -63,6 +63,7 @@ packages:
       - name: "zellij"
       - name: "bottom"
       - name: "helm-ls"
+      - name: "asdf"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
