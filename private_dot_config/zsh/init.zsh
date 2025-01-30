@@ -53,7 +53,8 @@ if command_exists starship; then
 fi
 
 if [[ -d "$HOME/.asdf" ]]; then
-  . "$HOME/.asdf/asdf.sh"
+  export ASDF_DATA_DIR="$HOME/.asdf"
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fi
 
 if command_exists zoxide; then
