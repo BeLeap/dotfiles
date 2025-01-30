@@ -182,17 +182,17 @@ shift-down = ['volume set 0', 'mode main']
 
 [[on-window-detected]]
     if.app-id = 'com.googlecode.iterm2'
-    check-further-callbacks = true
+    check-further-callbacks = false
     run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
     if.app-id = 'org.mozilla.firefoxdeveloperedition'
-    check-further-callbacks = true
+    check-further-callbacks = false
     run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
     if.app-id = 'com.1password.1password'
-    check-further-callbacks = true
+    check-further-callbacks = false
     run = ['layout floating']
 
 [[on-window-detected]]
