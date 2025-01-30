@@ -187,7 +187,7 @@ shift-down = ['volume set 0', 'mode main']
 
 [[on-window-detected]]
     if.app-id = 'org.mozilla.firefoxdeveloperedition'
-    check-further-callbacks = false
+    check-further-callbacks = true
     run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
