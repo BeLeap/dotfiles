@@ -52,9 +52,13 @@ if command_exists starship; then
   eval "$(starship init zsh)"
 fi
 
-if [[ -d "$HOME/.asdf" ]]; then
+if command_exists asdf; then
   export ASDF_DATA_DIR="$HOME/.asdf"
   export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+fi
+
+if [[ -d "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]]; then
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
 
 if command_exists zoxide; then
