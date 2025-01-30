@@ -15,7 +15,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 exec-on-workspace-change = ['/bin/bash', '-c',
-    'echo $AEROSPACE_FOCUSED_WORKSPACE > /tmp/log && aerospace move-node-to-workspace --window-id $(aerospace list-windows --all --format "%{window-title}%{tab}%{window-id}" | grep Picture-in-Picture | awk "{print \\$2}") $AEROSPACE_FOCUSED_WORKSPACE'
+    'echo $PATH > /tmp/log && aerospace move-node-to-workspace --window-id $(aerospace list-windows --all --format "%{window-title}%{tab}%{window-id}" | grep Picture-in-Picture | awk "{print \\$2}") $AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
 # Possible values: (qwerty|dvorak)
