@@ -57,7 +57,7 @@ if command_exists asdf; then
   export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fi
 
-if [[ -d "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]]; then
+if [[ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]]; then
   . /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
 
