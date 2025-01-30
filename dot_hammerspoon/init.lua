@@ -51,4 +51,5 @@ PaperWM:bindHotkeys({
     move_window_8 = {{"alt", "cmd", "shift"}, "8"},
     move_window_9 = {{"alt", "cmd", "shift"}, "9"}
 })
+PaperWM.swipe_fingers = 3
 PaperWM:start()
