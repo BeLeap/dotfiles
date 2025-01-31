@@ -2,4 +2,4 @@ README.md
 LICENSE
 root.mark
 scripts/
-private_dot_config/iterm2/com_googlecode_iterm2.plist
+.config/iterm2/com_googlecode_iterm2.plist
