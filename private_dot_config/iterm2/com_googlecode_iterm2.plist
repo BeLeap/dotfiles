@@ -6,6 +6,8 @@
 	<string>7995D463-D0EF-4C94-8D6B-E2FCB4BED141</string>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -606,8 +608,14 @@
 			<string>/Users/cs.jang</string>
 		</dict>
 	</array>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>5</integer>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 </dict>
