@@ -171,6 +171,11 @@ shift-down = ['volume set 0', 'mode main']
     run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
+    if.app-id = 'com.electron.logseq'
+    check-further-callbacks = false
+    run = ['move-node-to-workspace 4']
+
+[[on-window-detected]]
     if.app-id = 'com.1password.1password'
     check-further-callbacks = false
     run = ['layout floating']
