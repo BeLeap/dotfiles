@@ -46,8 +46,6 @@ set_alias_if_exists cupdate chezmoi "chezmoi update"
 set_alias_if_exists cedit chezmoi "chezmoi edit"
 set_alias_if_exists capply chezmoi "chezmoi apply"
 
-set_alias_if_exists zj zellij "zellij"
-
 if command_exists starship; then
   eval "$(starship init zsh)"
 fi

@@ -1,4 +1,6 @@
 if command_exists zellij; then
+  alias zj="zellij attach --create home
+
   zellij_tab_name_update() {
       if [[ -n $ZELLIJ ]]; then
           local current_dir=$PWD
