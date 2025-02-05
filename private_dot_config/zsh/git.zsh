@@ -70,7 +70,7 @@ function gpc() {
   # 임시 파일을 사용하여 커밋 메시지를 작성
   local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
-  ai_commit_msg=$(ollama run llama3.2:1b "\`\`\`$(git diff --staged)\`\`\` This is result of command 'git diff --staged'. Write a commit message in 10 words. DO NOT ANSWER EXCEPT COMMIT MESSAGE.")
+  ai_commit_msg=$(ollama run llama3.2:1b "\`\`\`$(git diff)\`\`\` This is result of command 'git diff'. Write a commit message in 10 words. DO NOT ANSWER EXCEPT COMMIT MESSAGE.")
 
   # 이슈 번호를 커밋 메시지에 추가
   echo "[${issue}] $ai_commit_msg" > $temp_file
