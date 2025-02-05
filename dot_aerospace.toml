@@ -181,6 +181,11 @@ shift-down = ['volume set 0', 'mode main']
     run = ['layout floating']
 
 [[on-window-detected]]
+    if.app-id = 'com.vivarepublica.ent.timetracker'
+    check-further-callbacks = false
+    run = ['layout floating']
+
+[[on-window-detected]]
     if.app-name-regex-substring = '.*'
     if.during-aerospace-startup = true
     check-further-callbacks = true
