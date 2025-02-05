@@ -3,9 +3,6 @@ command = "biome"
 args = ["lsp-proxy"]
 required-root-patterns = ["biome.json"]
 
-[language-server.golangci-lint]
-command = "golangci-lint-langserver" 
-args = ["run", "--out-format", "json", "--issues-exit-code=1"]
 
 [[language]]
 name = "javascript"
@@ -32,10 +29,10 @@ name = "rust"
 auto-format = true
 language-servers = [ "rust-analyzer" ]
 
-[[language]]
-name = "go"
-language-servers = [ "gopls", "golangci-lint" ]
-auto-format = true
+# [[language]]
+# name = "go"
+# language-servers = [ "gopls", "golangci-lint" ]
+# auto-format = true
 
 [[language]]
 name = "json"
