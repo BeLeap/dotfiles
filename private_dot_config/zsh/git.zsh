@@ -70,8 +70,10 @@ function gpc() {
   # 임시 파일을 사용하여 커밋 메시지를 작성
   local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
+  ai_commit_msg=$(ollama run phi4 "\`\`\`$(git diff)\`\`\` This is result of command 'git diff'. Write a commit message in 10 words. DO NOT ANSWER EXCEPT COMMIT MESSAGE.")
+
   # 이슈 번호를 커밋 메시지에 추가
-  echo "[${issue}] " > $temp_file
+  echo "[${issue}] $ai_commit_msg" > $temp_file
 
   # git commit -v로 diff와 함께 편집기 열기
   git commit -v -e --file=$temp_file $@
