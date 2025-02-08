@@ -42,7 +42,6 @@ if [[ ! -z "$(command -v gh)" ]]; then
   alias cbfi="create_branch_from_issue"
 fi
 
-alias gc="git commit"
 alias gst="git status"
 alias gp="git push"
 alias gl="git pull"
