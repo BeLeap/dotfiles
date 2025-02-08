@@ -81,7 +81,7 @@ function gpc() {
     Here is the git diff:
 
     ```
-    '$(git diff --staged)'
+    '$(git diff --staged --unified=0)'
     ```
 
     Now, generate the commit message.
