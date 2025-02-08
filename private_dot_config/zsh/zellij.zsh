@@ -1,6 +1,6 @@
 if command_exists zellij; then
   alias zj="zellij attach --create home"
-  alias j="z \$(zellij list-sessions -n | grep current | awk '{print \$1}')"
+  alias j="z \$(zellij list-sessions -n | grep current | awk '{print \$1}' | sed 's/_/\//g')"
 
   zellij_tab_name_update() {
       if [[ -n $ZELLIJ ]]; then
