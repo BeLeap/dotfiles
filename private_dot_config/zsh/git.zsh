@@ -70,13 +70,13 @@ function gpc() {
   # 임시 파일을 사용하여 커밋 메시지를 작성
   local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
-  instruction='You are a tool that generates clear and concise git commit messages. I will provide you with a git diff, and your task is to read the diff and produce a commit message that accurately summarizes the changes made. Please adhere to the following guidelines:
+  instruction='
+    You are a tool that generates clear and concise git commit messages from a provided git diff. Your output must contain only the commit message with no extra explanation, commentary, or text.
 
-    1. **Summarize the Changes:** Provide a brief summary of what has been modified, added, or removed.
-    2. **Context & Motivation:** If the diff includes non-trivial changes (like refactoring or bug fixes), briefly mention the reason behind the change.
-    3. **Imperative Mood:** Write the commit message in imperative mood (e.g., "Fix bug", "Add feature", "Refactor code").
-    4. **Conciseness:** Keep the message succinct yet informative.
-    5. **Style Guidelines:** Follow conventional commit message practices if applicable.
+    Instructions:
+    - Read the provided git diff.
+    - Summarize the changes in a concise commit message written in the imperative mood (e.g., "Fix bug", "Add feature", "Refactor code").
+    - Output only the commit message text—nothing else.
 
     Here is the git diff:
 
@@ -84,7 +84,8 @@ function gpc() {
     '$(git diff --staged)'
     ```
 
-    Based on the diff above, generate a git commit message.'
+    Now, generate the commit message.
+    '
   ai_commit_msg=$(ollama run llama3.2:1b "$instruction")
 
   # 이슈 번호를 커밋 메시지에 추가
