@@ -54,7 +54,8 @@ alias gf="git fetch --all --prune"
 alias gc="ai_commit"
 
 function ai_commit {
-  local custom_prefix=$(echo "$1")
+  local custom_prefix="$1"
+  shift
   # 임시 파일을 사용하여 커밋 메시지를 작성
   local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
