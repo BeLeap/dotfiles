@@ -54,11 +54,11 @@ alias gf="git fetch --all --prune"
 alias gc="ai_commit"
 
 function ai_commit {
-  custom_prefix="$1"
+  local custom_prefix="$1"
   # 임시 파일을 사용하여 커밋 메시지를 작성
   local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
-  instruction='
+  local instruction='
     You are a tool that generates clear and concise git commit messages from a provided git diff. Your output must contain only the commit message with no extra explanation, commentary, or text.
 
     Instructions:
@@ -74,7 +74,7 @@ function ai_commit {
 
     Now, generate the commit message.
   '
-  ai_commit_msg=$(ollama run llama3.2:1b "$instruction")
+  local ai_commit_msg=$(ollama run llama3.2:1b "$instruction")
 
   # 이슈 번호를 커밋 메시지에 추가
   echo "$custom_prefix$ai_commit_msg" > $temp_file
