@@ -75,7 +75,7 @@ function gpc() {
 
     Instructions:
     - Read the provided git diff.
-    - Summarize the changes in a concise commit message written in the imperative mood (e.g., "Fix bug", "Add feature", "Refactor code").
+    - Summarize the changes in a concise commit message written in the imperative mood.
     - Output only the commit message text—nothing else.
 
     Here is the git diff:
