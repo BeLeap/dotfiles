@@ -52,7 +52,7 @@ alias gco="git checkout"
 alias gd="git diff"
 alias gf="git fetch --all --prune"
 
-function gc() {
+function gc {
   prefix=$1
   # 임시 파일을 사용하여 커밋 메시지를 작성
   local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
@@ -86,7 +86,7 @@ function gc() {
 }
 
 # gpc: git prefix commit
-function gpc() {
+function gpc {
   # 현재 브랜치 이름을 가져옵니다
   local branch_name=$(git rev-parse --abbrev-ref HEAD)
 
