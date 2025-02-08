@@ -51,8 +51,9 @@ alias ga="git add"
 alias gco="git checkout"
 alias gd="git diff"
 alias gf="git fetch --all --prune"
+alias gc="ai_commit"
 
-function gc {
+function ai_commit {
   prefix=$1
   # 임시 파일을 사용하여 커밋 메시지를 작성
   local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
@@ -98,7 +99,7 @@ function gpc {
     return 1
   fi
 
-  gc "[${issue}] "
+  ai_commit "[${issue}] "
 }
 
 ggr() {
