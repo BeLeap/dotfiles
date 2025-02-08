@@ -73,7 +73,7 @@ function ai_commit {
     ```
 
     Now, generate the commit message.
-    '
+  '
   ai_commit_msg=$(ollama run llama3.2:1b "$instruction")
 
   # 이슈 번호를 커밋 메시지에 추가
