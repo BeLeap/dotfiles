@@ -80,7 +80,9 @@ function gpc() {
 
 Here is the git diff:
 
+```
 '$(git diff)'
+```
 
 Based on the diff above, generate a git commit message.'
   ai_commit_msg=$(ollama run llama3.2:1b "$PROMPT")
