@@ -51,7 +51,6 @@ if command_exists starship; then
 fi
 
 if command_exists asdf; then
-  export ASDF_DATA_DIR="$HOME/.asdf"
   export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
   # . $(brew --prefix asdf)/libexec/asdf.sh
 fi
