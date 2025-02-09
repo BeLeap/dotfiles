@@ -77,7 +77,7 @@ function ai_commit {
 
     Now, generate the commit message.
   '
-  local ai_commit_msg=$(ollama run llama3.2:1b "$instruction")
+  local ai_commit_msg=$(ollama run llama3.2:3b "$instruction")
 
   # 이슈 번호를 커밋 메시지에 추가
   echo "$custom_prefix$ai_commit_msg" > $temp_file
