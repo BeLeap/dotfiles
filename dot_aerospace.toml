@@ -166,6 +166,11 @@ shift-down = ['volume set 0', 'mode main']
     run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
+    if.app-id = 'org.alacritty'
+    check-further-callbacks = false
+    run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
     if.app-id = 'org.mozilla.firefoxdeveloperedition'
     check-further-callbacks = false
     run = ['move-node-to-workspace 3']
