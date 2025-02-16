@@ -63,8 +63,9 @@ function ai_commit {
 
   local instruction='
     - Read the provided git diff.
-    - Summarize the changes in a concise commit message written in the imperative mood.
-    - Output only the commit message text—nothing else.
+    - Summarize the changes in a concise commit message.
+    - Make it CONCISE.
+    - Output ONLY the commit message text.
 
     Here is the git diff:
 
