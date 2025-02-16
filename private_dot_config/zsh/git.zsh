@@ -76,8 +76,6 @@ function ai_commit {
     esac
   done
 
-  echo $original_args
-
   if [[ -z "$commit_message" ]]; then
     # 임시 파일을 사용하여 커밋 메시지를 작성
     local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
