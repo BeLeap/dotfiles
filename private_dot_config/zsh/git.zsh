@@ -54,10 +54,9 @@ alias gf="git fetch --all --prune"
 alias gc="ai_commit"
 
 function ai_commit {
-  local custom_prefix="$1"
-  if [[ ! -z "$1" ]]; then
-    shift
-  fi
+  local original_args=("$@")
+  local commit_message=""
+  local custom_prefix=""
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -66,11 +65,18 @@ function ai_commit {
         commit_message="$1"
         shift
         ;;
+      -p)
+        shift
+        custom_prefix="$1"
+        shift
+        ;;
       *)
         shift
         ;;
     esac
   done
+
+  echo $original_args
 
   if [[ -z "$commit_message" ]]; then
     # 임시 파일을 사용하여 커밋 메시지를 작성
@@ -91,12 +97,12 @@ function ai_commit {
     echo "$custom_prefix$ai_commit_msg" > $temp_file
 
     # git commit -v로 diff와 함께 편집기 열기
-    git commit -v -e --file=$temp_file "$@"
+    git commit -v -e --file=$temp_file "${original_args[@]}"
 
     # 임시 파일 삭제
     rm -f $temp_file
   else
-    git commit -v -m "$commit_message" "$@"
+    git commit -v -m "$commit_message" "${original_args[@]}"
   fi
 }
 
@@ -113,7 +119,7 @@ function gpc {
     return 1
   fi
 
-  ai_commit "[${issue}] "
+  ai_commit -p "[${issue}] "
 }
 
 ggr() {
