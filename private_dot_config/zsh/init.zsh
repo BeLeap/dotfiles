@@ -75,10 +75,15 @@ if command_exists fzf; then
   source <(fzf --zsh)
 
   # cdf - cd into the directory of the selected file
-  cdf() {
+  fcd() {
      local file
      local dir
      file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+  }
+  fe() {
+     local file
+     local dir
+     file=$(fzf +m -q "$1") && e "$file"
   }
 fi
 
