@@ -74,9 +74,7 @@ function ai_commit {
 
   echo "$@"
 
-  if [[ -n "$commit_message" ]]; then
-    git commit -v -m "$commit_message" "$@"
-  else
+  if [[ -z "$commit_message" ]]; then
     # 임시 파일을 사용하여 커밋 메시지를 작성
     local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
@@ -99,6 +97,8 @@ function ai_commit {
 
     # 임시 파일 삭제
     rm -f $temp_file
+  else
+    git commit -v -m "$commit_message" "$@"
   fi
 }
 
