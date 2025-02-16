@@ -58,28 +58,48 @@ function ai_commit {
   if [[ ! -z "$1" ]]; then
     shift
   fi
-  # 임시 파일을 사용하여 커밋 메시지를 작성
-  local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
-  local instruction='
-    Write a professional git commit message based on the a diff below.
-    Do not preface the commit with anything, use the present tense, return the full sentence, and use the conventional commits specification.
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -m)
+        shift
+        commit_message="$1"
+        shift
+        ;;
+      *)
+        shift
+        ;;
+    esac
+  done
 
-    diff
-    ```
-    '$(git diff --staged --unified=0)'
-    ```
-  '
-  local ai_commit_msg=$(ollama run llama3.2:3b "$instruction")
+  echo "$@"
 
-  # 이슈 번호를 커밋 메시지에 추가
-  echo "$custom_prefix$ai_commit_msg" > $temp_file
+  if [[ -n "$commit_message" ]]; then
+    git commit -v -m "$commit_message" "$@"
+  else
+    # 임시 파일을 사용하여 커밋 메시지를 작성
+    local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
-  # git commit -v로 diff와 함께 편집기 열기
-  git commit -v -e --file=$temp_file $@
+    local instruction='
+      Write a professional git commit message based on the a diff below.
+      Do not preface the commit with anything, use the present tense, return the full sentence, and use the conventional commits specification.
 
-  # 임시 파일 삭제
-  rm -f $temp_file
+      diff
+      ```
+      '$(git diff --staged --unified=0)'
+      ```
+    '
+    local ai_commit_msg=$(ollama run llama3.2:3b "$instruction")
+
+    # 이슈 번호를 커밋 메시지에 추가
+    echo "$custom_prefix$ai_commit_msg" > $temp_file
+
+    # git commit -v로 diff와 함께 편집기 열기
+    git commit -v -e --file=$temp_file $@
+
+    # 임시 파일 삭제
+    rm -f $temp_file
+  fi
 }
 
 # gpc: git prefix commit
