@@ -72,8 +72,6 @@ function ai_commit {
     esac
   done
 
-  echo "$@"
-
   if [[ -z "$commit_message" ]]; then
     # 임시 파일을 사용하여 커밋 메시지를 작성
     local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
@@ -93,7 +91,7 @@ function ai_commit {
     echo "$custom_prefix$ai_commit_msg" > $temp_file
 
     # git commit -v로 diff와 함께 편집기 열기
-    git commit -v -e --file=$temp_file $@
+    git commit -v -e --file=$temp_file "$@"
 
     # 임시 파일 삭제
     rm -f $temp_file
