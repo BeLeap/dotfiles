@@ -62,9 +62,6 @@ function ai_commit {
   local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
   local instruction='
-    You are a tool that generates clear and concise git commit messages from a provided git diff. Your output must contain only the commit message with no extra explanation, commentary, or text.
-
-    Instructions:
     - Read the provided git diff.
     - Summarize the changes in a concise commit message written in the imperative mood.
     - Output only the commit message text—nothing else.
@@ -75,7 +72,7 @@ function ai_commit {
     '$(git diff --staged --unified=0)'
     ```
 
-    Now, generate the commit message.
+    Generate the commit message.
   '
   local ai_commit_msg=$(ollama run llama3.2:3b "$instruction")
 
