@@ -62,18 +62,13 @@ function ai_commit {
   local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
   local instruction='
-    - Read the provided git diff.
-    - Summarize the changes in a concise commit message.
-    - Make it CONCISE.
-    - Output ONLY the commit message text.
+    Write a professional git commit message based on the a diff below
+    Do not preface the commit with anything, use the present tense, return the full sentence, and use the conventional commits specification.
 
-    Here is the git diff:
-
+    diff
     ```
     '$(git diff --staged --unified=0)'
     ```
-
-    Generate the commit message.
   '
   local ai_commit_msg=$(ollama run llama3.2:3b "$instruction")
 
