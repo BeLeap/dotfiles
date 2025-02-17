@@ -1,5 +1,6 @@
 [git]
     autoCommit = true
+	autoPush = {{ if (stat (joinPath .chezmoi.homeDir ".is_work")) }}false{{ else }}true{{ end }}
 
 [edit]
     apply = true
