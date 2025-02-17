@@ -81,7 +81,7 @@ function ai_commit {
     local temp_file=$(mktemp /tmp/commit-msg.XXXXXX)
 
     local instruction='
-      Write a professional git commit message based on the a diff below.
+      Write a git commit message based on the a diff below.
       Do not preface the commit with anything, use the present tense, return the full sentence, and use the conventional commits specification.
 
       diff
