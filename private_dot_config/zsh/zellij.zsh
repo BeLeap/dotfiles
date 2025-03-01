@@ -2,6 +2,12 @@ if command_exists zellij; then
   alias zj="zellij attach --create home"
   alias j="z \$(zellij list-sessions -n | grep current | awk '{print \$1}' | sed 's/_/\//g')"
 
+  zj() {
+      if [[ -z "$1" ]]; then
+      else
+      fi
+  }
+
   zellij_tab_name_update() {
       if [[ -n $ZELLIJ ]]; then
           local current_dir=$PWD
