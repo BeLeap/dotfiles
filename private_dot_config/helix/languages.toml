@@ -50,3 +50,9 @@ file-types = ["Dockerfile", { glob = "*Dockerfile*" }]
 [[grammar]]
 name = "dockerfile"
 source = { git = "https://github.com/camdencheek/tree-sitter-dockerfile", rev = "main" }
+
+[[language]]
+name = "bash"
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = 'shfmt', args = ["-i", "4"] }
+auto-format = true
