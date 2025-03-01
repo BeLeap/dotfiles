@@ -3,32 +3,32 @@ source $ZSH_CONFIG_PATH/util.zsh
 autoload -Uz compinit && compinit
 
 if [[ ! -z "$(command -v hx)" ]]; then
-  export EDITOR="hx"
+    export EDITOR="hx"
 else
-  export EDITOR="vim"
+    export EDITOR="vim"
 fi
 export PATH=$HOME/Library/Android/sdk/platform-tools:$HOME/go/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/bin:/bin:$PATH
 export LC_ALL="en_US.UTF-8"
 
 if [[ -d "$HOME/.zinit" ]]; then
-  export ZINIT_HOME="$HOME/.zinit"
-  source "${ZINIT_HOME}/zinit.zsh"
+    export ZINIT_HOME="$HOME/.zinit"
+    source "${ZINIT_HOME}/zinit.zsh"
 
-  zinit ice wait lucid
+    zinit ice wait lucid
 
-  zinit light zsh-users/zsh-syntax-highlighting
-  zinit light zsh-users/zsh-autosuggestions
-  zinit light joshskidmore/zsh-fzf-history-search
+    zinit light zsh-users/zsh-syntax-highlighting
+    zinit light zsh-users/zsh-autosuggestions
+    zinit light joshskidmore/zsh-fzf-history-search
 
-  zinit ice depth=1
-  zinit light jeffreytse/zsh-vi-mode
+    zinit ice depth=1
+    zinit light jeffreytse/zsh-vi-mode
 else
-  # Some fallback configs
+    # Some fallback configs
 
-  # Vi Mode
-  bindkey -v
-  bindkey ^R history-incremental-search-backward 
-  bindkey ^S history-incremental-search-forward
+    # Vi Mode
+    bindkey -v
+    bindkey ^R history-incremental-search-backward
+    bindkey ^S history-incremental-search-forward
 fi
 
 alias e="$EDITOR"
@@ -47,50 +47,50 @@ set_alias_if_exists cedit chezmoi "chezmoi edit"
 set_alias_if_exists capply chezmoi "chezmoi apply"
 
 if command_exists starship; then
-  eval "$(starship init zsh)"
+    eval "$(starship init zsh)"
 fi
 
 if command_exists asdf; then
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-  # . $(brew --prefix asdf)/libexec/asdf.sh
+    export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+    # . $(brew --prefix asdf)/libexec/asdf.sh
 fi
 
 if command_exists zoxide; then
-  eval "$(zoxide init zsh)"
+    eval "$(zoxide init zsh)"
 else
-  . $HOME/.scripts/z.sh
+    . $HOME/.scripts/z.sh
 fi
 
 if command_exists carapace; then
-  export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
-  zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-  source <(carapace _carapace)
+    export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+    zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+    source <(carapace _carapace)
 fi
 
 if command_exists direnv; then
-  eval "$(direnv hook zsh)"
+    eval "$(direnv hook zsh)"
 fi
 
 if command_exists fzf; then
-  source <(fzf --zsh)
+    source <(fzf --zsh)
 
-  # cdf - cd into the directory of the selected file
-  fcd() {
-     local file
-     local dir
-     file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
-  }
-  fe() {
-     local file
-     local dir
-     file=$(fzf +m -q "$1") && e "$file"
-  }
+    # cdf - cd into the directory of the selected file
+    fcd() {
+        local file
+        local dir
+        file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+    }
+    fe() {
+        local file
+        local dir
+        file=$(fzf +m -q "$1") && e "$file"
+    }
 fi
 
 if command_exists asdf; then
-  if [[ -f "$HOME/.asdf/plugins/java/set-java-home.zsh" ]]; then
-    . ~/.asdf/plugins/java/set-java-home.zsh
-  fi
+    if [[ -f "$HOME/.asdf/plugins/java/set-java-home.zsh" ]]; then
+        . ~/.asdf/plugins/java/set-java-home.zsh
+    fi
 fi
 
 source $ZSH_CONFIG_PATH/git.zsh
