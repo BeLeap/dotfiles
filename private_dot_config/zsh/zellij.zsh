@@ -1,10 +1,11 @@
 if command_exists zellij; then
-    alias zj="zellij attach --create home"
     alias j="z \$(zellij list-sessions -n | grep current | awk '{print \$1}' | sed 's/_/\//g')"
 
     zj() {
         if [[ -z "$1" ]]; then
+            zellij a -c home
         else
+            zellij a -c "$1"
         fi
     }
 
