@@ -2,8 +2,8 @@ source $ZSH_CONFIG_PATH/util.zsh
 
 autoload -Uz compinit && compinit
 
-if [[ ! -z "$(command -v hx)" ]]; then
-    export EDITOR="hx"
+if [[ ! -z "$(command -v nvim)" ]]; then
+    export EDITOR="nvim"
 else
     export EDITOR="vim"
 fi
