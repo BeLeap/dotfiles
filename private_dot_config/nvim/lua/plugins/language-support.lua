@@ -111,4 +111,8 @@ return {
 		"ziglang/zig.vim",
 		event = { "BufEnter *.zig" },
 	},
+  {
+    "towolf/vim-helm",
+    event = "VeryLazy",
+  }
 }
