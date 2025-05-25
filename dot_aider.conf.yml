@@ -1,0 +1,4 @@
+model: ollama_chat/phi4:latest
+
+set-env:
+  - OLLAMA_API_BASE=http://127.0.0.1:11434
