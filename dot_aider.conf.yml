@@ -1,4 +1,4 @@
-model: ollama_chat/devstral:latest
+model: ollama_chat/mistral:latest
 
 set-env:
   - OLLAMA_API_BASE=http://127.0.0.1:11434
