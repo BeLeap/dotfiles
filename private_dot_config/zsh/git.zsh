@@ -51,7 +51,7 @@ alias ga="git add"
 alias gco="git checkout"
 alias gd="git diff"
 alias gf="git fetch --all --prune"
-alias gc="ai_commit"
+alias gc="git commit"
 
 function ai_commit {
     local original_args=("$@")
