@@ -62,6 +62,7 @@ packages:
       - name: "bottom"
       - name: "helm-ls"
       - name: "asdf"
+      - name: "beleap/tap/boda"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
