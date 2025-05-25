@@ -65,4 +65,3 @@ packages:
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
-      - name: "aerospace"
