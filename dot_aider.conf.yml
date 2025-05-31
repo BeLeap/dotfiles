@@ -1,4 +1,4 @@
-model: openrouter/microsoft/phi-4-reasoning-plus:free
+model: openrouter/google/gemini-2.0-flash-exp:free
 
 set-env:
   - OLLAMA_API_BASE=http://127.0.0.1:11434
