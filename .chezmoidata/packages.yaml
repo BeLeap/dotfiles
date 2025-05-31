@@ -62,6 +62,7 @@ packages:
       - name: "helm-ls"
       - name: "asdf"
       - name: "beleap/tap/boda"
+      - name: "watchexec"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
