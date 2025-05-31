@@ -63,6 +63,7 @@ packages:
       - name: "asdf"
       - name: "beleap/tap/boda"
       - name: "watchexec"
+      - name: "ynqa/tap/epiq"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
