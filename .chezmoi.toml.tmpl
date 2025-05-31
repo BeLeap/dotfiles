@@ -1,12 +1,13 @@
+[data]
+{{ include (joinPath .chezmoi.homeDir ".chezmoi_hostmeta.toml") }}
+
 [git]
-    autoCommit = true
-    autoPush = {{ if (stat (joinPath .chezmoi.homeDir ".is_work")) }}false{{ else }}true{{ end }}
+autoCommit = true
+autoPush = {{ .personal }}
 
 [edit]
-    apply = true
+apply = true
 
 [template]
-  options = ["missingkey=zero"]
+options = ["missingkey=zero"]
 
-[data]
-  isAirgapped = {{ if (stat (joinPath .chezmoi.homeDir ".is_airgapped")) }}true{{ else }}false{{ end }}

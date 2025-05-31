@@ -1,4 +1,4 @@
-{{- if .isAirgapped -}}
+{{- if .airgapped -}}
 {{- else }}
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
