@@ -64,6 +64,7 @@ packages:
       - name: "beleap/tap/boda"
       - name: "watchexec"
       - name: "ynqa/tap/epiq"
+      - name: "arping"
     casks:
       - name: "mitmproxy"
       - name: "wireshark"
