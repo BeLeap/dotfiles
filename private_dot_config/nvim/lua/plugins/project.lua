@@ -20,7 +20,7 @@ return {
         patterns = { ".nvim", "root.mark", ".git" },
         silent_chdir = true,
         show_hidden = true,
-        excluder_dirs = {
+        exclude_dirs = {
           "*/node_modules/*",
           "/tmp/*",
         },
