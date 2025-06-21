@@ -100,7 +100,7 @@ if $FZF_EXISTS
         git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git switch "$result"
     end
 
-    function gfdb -d "Fuzzy-find and switch a branch"
+    function gfdb -d "Fuzzy-find and delete a branch"
         git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git branch -D "$result"
     end
 end
