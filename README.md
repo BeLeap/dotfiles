@@ -3,8 +3,7 @@
 https://chezmoi.io
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://git.sr.ht/~beleap/dotfiles
-```
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply beleap
 
 # `~/.chezmoi_hostmeta.toml`
 
