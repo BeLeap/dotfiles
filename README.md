@@ -1,7 +1,5 @@
 # chezmoi
 
-https://chezmoi.io
-
 ```sh
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply beleap
 ```
