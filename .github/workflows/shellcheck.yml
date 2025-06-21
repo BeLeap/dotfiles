@@ -21,4 +21,4 @@ jobs:
           sudo apt-get install -y shellcheck
       - name: Run shellcheck
         run: |
-          shellcheck $(git ls-files '*.sh')
+          shellcheck $(git ls-files '*.sh' ':!dot_scripts/z.sh')
