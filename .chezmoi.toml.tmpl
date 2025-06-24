@@ -3,7 +3,7 @@
 
 [git]
 autoCommit = true
-autoPush = {{ .personal }}
+autoPush = {{ default "false" .airgapped }}
 
 [edit]
 apply = true
