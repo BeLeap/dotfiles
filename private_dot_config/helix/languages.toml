@@ -3,6 +3,12 @@ command = "biome"
 args = ["lsp-proxy"]
 required-root-patterns = ["biome.json"]
 
+[language-server.kotlin-ls]
+command = "kotlin-ls"
+args = ["--stdio"]
+timeout = 60
+required-root-patterns = ["build.gradle", "build.gradle.kts", "pom.xml"]
+
 
 [[language]]
 name = "javascript"
@@ -56,3 +62,12 @@ name = "bash"
 indent = { tab-width = 4, unit = "    " }
 formatter = { command = 'shfmt', args = ["-i", "4"] }
 auto-format = true
+
+[[language]]
+name = "kotlin"
+scope = "source.kotlin"
+injection-regex = "kotlin"
+file-types = ["kt", "kts"]
+roots = ["build.gradle", "build.gradle.kts", "settings.gradle", "settings.gradle.kts", "pom.xml"]
+auto-format = true
+language-servers = ["kotlin-ls"]
