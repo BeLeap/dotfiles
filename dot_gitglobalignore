@@ -3,4 +3,5 @@ root.mark
 .tool-versions
 .envrc
 .helix
+CLAUDE.md
 .aider*
