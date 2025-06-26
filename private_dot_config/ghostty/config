@@ -11,6 +11,4 @@ window-title-font-family = "Cascadia Code NF"
 window-height = 99999
 window-width = 99999
 
-title = "$PWD"
-
 shell-integration-features = no-title
