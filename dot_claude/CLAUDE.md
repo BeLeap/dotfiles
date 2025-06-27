@@ -8,6 +8,7 @@ Then implement it.
 
 ## IMPORTANT: Always make commits when making code changes
 - You MUST commit your changes after completing meaningful work
+- You can commit during working on single work if it is meaningful
 - Always use `git add` and `git commit` commands
 - Never leave uncommitted changes unless explicitly told otherwise
 - Make commits even for small changes or fixes
