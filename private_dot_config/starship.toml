@@ -1,3 +1,6 @@
+format = """$all"""
+right_format = """$kubernetes"""
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
@@ -95,7 +98,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [kubernetes]
-right_format = '\[[$symbol$context( \($namespace\))]($style)\]'
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
 
 [lua]
 format = '\[[$symbol($version)]($style)\]'
