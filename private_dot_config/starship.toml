@@ -206,5 +206,5 @@ format = '\[[$symbol($version)]($style)\]'
 
 [shlvl]
 disabled = false
-format = '[$symbol$shlvl]($style)'
+format = '[$shlvl]($style)'
 threshold = 1
