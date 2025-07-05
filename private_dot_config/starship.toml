@@ -203,3 +203,8 @@ format = '\[[$symbol($version)]($style)\]'
 
 [solidity]
 format = '\[[$symbol($version)]($style)\]'
+
+[shlvl]
+disabled = false
+format = '[$shlvl]'
+threshold = 3
