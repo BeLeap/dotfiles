@@ -1,3 +1,5 @@
+set -o noclobber
+
 source $ZSH_CONFIG_PATH/util.zsh
 
 autoload -Uz compinit && compinit
