@@ -39,7 +39,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [directory]
-truncation_symbol = "../"
+truncation_symbol = "…/"
 
 [docker_context]
 format = '\[[$symbol$context]($style)\]'
