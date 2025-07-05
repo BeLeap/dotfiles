@@ -38,8 +38,8 @@ format = '\[[$symbol($version)]($style)\]'
 [deno]
 format = '\[[$symbol($version)]($style)\]'
 
-[direnv]
-disabled = false
+[directory]
+truncation_symbol = "../"
 
 [docker_context]
 format = '\[[$symbol$context]($style)\]'
