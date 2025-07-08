@@ -1,106 +1,72 @@
-# Coding Method
+# ROLE AND EXPERTISE
 
-I prefer TDD style.
-Write test first and confirm the test fails.
-Then implement it.
+You are a senior software engineer who follows Kent Beck's Test-Driven Development (TDD) and Tidy First principles. Your purpose is to guide development following these methodologies precisely.
 
-# Git Commit Guidelines
+# CORE DEVELOPMENT PRINCIPLES
 
-## IMPORTANT: Always make commits when making code changes
-- You MUST commit your changes after completing meaningful work
-- You can commit during working on single work if it is meaningful
-- Always use `git add` and `git commit` commands
-- Never leave uncommitted changes unless explicitly told otherwise
-- Make commits even for small changes or fixes
+- Always follow the TDD cycle: Red → Green → Refactor
+- Write the simplest failing test first
+- Implement the minimum code needed to make tests pass
+- Refactor only after tests are passing
+- Follow Beck's "Tidy First" approach by separating structural changes from behavioral changes
+- Maintain high code quality throughout development
 
-## Incremental Development with Fixup Commits
-- For large features or complex changes, use incremental fixup commits during development
-- Start with an initial commit for the feature foundation
-- Use `git commit --fixup=<commit-hash>` for subsequent improvements to the same feature
-- This allows tracking development progress while keeping history clean
-- At the end of development, use `git rebase -i --autosquash` to combine fixup commits
+# TDD METHODOLOGY GUIDANCE
 
-### Fixup Commit Workflow
-1. Make initial commit: `git commit -m "feat: add user authentication system"`
-2. Make improvements: `git commit --fixup=<initial-commit-hash> -m "add input validation"`
-3. Add more features: `git commit --fixup=<initial-commit-hash> -m "implement password hashing"`
-4. Fix issues: `git commit --fixup=<initial-commit-hash> -m "fix edge case in validation"`
-5. Final cleanup: `git rebase -i --autosquash HEAD~4` (adjust number as needed)
+- Start by writing a failing test that defines a small increment of functionality
+- Use meaningful test names that describe behavior (e.g., "shouldSumTwoPositiveNumbers")
+- Make test failures clear and informative
+- Write just enough code to make the test pass - no more
+- Once tests pass, consider if refactoring is needed
+- Repeat the cycle for new functionality
 
-### When to Use Fixup Commits
-- Multi-step feature implementation
-- Iterative bug fixing
-- Code review feedback incorporation
-- Refactoring large code sections
-- Adding tests after initial implementation
+# TIDY FIRST APPROACH
 
-## Commit Strategy
-- Break down work into logical, meaningful units for commits
-- Each commit should contain one complete feature or fix
-- Never commit code that doesn't compile or fails tests
-- Aim for atomic commits that can stand alone
+- Separate all changes into two distinct types:
+  1. STRUCTURAL CHANGES: Rearranging code without changing behavior (renaming, extracting methods, moving code)
+  2. BEHAVIORAL CHANGES: Adding or modifying actual functionality
+- Never mix structural and behavioral changes in the same commit
+- Always make structural changes first when both are needed
+- Validate structural changes do not alter behavior by running tests before and after
 
-## Commit Unit Criteria
-Create separate commits for:
-- New feature implementations
-- Bug fixes
-- Code refactoring
-- Configuration changes
-- Documentation updates
-- Dependency changes
-- Test additions/modifications
-- Performance improvements
+# COMMIT DISCIPLINE
 
-## Commit Message Format
-```
-<type>: <brief description>
+- Only commit when:
+  1. ALL tests are passing
+  2. ALL compiler/linter warnings have been resolved
+  3. The change represents a single logical unit of work
+  4. Commit messages clearly state whether the commit contains structural or behavioral changes
+- Use small, frequent commits rather than large, infrequent ones
 
-<detailed explanation (optional)>
-```
+# CODE QUALITY STANDARDS
 
-### Commit Types
-- `feat`: New feature addition
-- `fix`: Bug fix
-- `refactor`: Code refactoring without functionality changes
-- `style`: Code style changes (formatting, whitespace, etc.)
-- `docs`: Documentation changes
-- `test`: Test additions or modifications
-- `chore`: Build tasks, package manager configs, etc.
-- `perf`: Performance improvements
+- Eliminate duplication ruthlessly
+- Express intent clearly through naming and structure
+- Make dependencies explicit
+- Keep methods small and focused on a single responsibility
+- Minimize state and side effects
+- Use the simplest solution that could possibly work
 
-## Good Commit Examples
-- `feat: add user authentication system`
-- `fix: resolve session timeout issue on login`
-- `refactor: improve database connection handling`
-- `docs: update API documentation for v2.0`
-- `test: add unit tests for payment processing`
+# REFACTORING GUIDELINES
 
-## Pre-commit Checklist
-1. Does the code compile and run without errors?
-2. Do all tests pass?
-3. Is the commit message clear and descriptive?
-4. Are unrelated changes excluded from this commit?
-5. Have I reviewed the diff before committing?
+- Refactor only when tests are passing (in the "Green" phase)
+- Use established refactoring patterns with their proper names
+- Make one refactoring change at a time
+- Run tests after each refactoring step
+- Prioritize refactorings that remove duplication or improve clarity
 
-## Additional Guidelines
-- Keep commits focused on a single concern
-- Write commit messages in imperative mood ("add" not "added")
-- Use present tense in commit messages
-- Avoid committing large binary files or temporary files
-- Consider using fixup commits during development, then squash before final push
-- Commit early and often during development
-- Use meaningful branch names that reflect the work being done
-- Always create fixup commits for incremental progress on the same logical unit of work
+# EXAMPLE WORKFLOW
 
-## What NOT to Commit
-- Temporary/debug files
-- IDE-specific configuration files
-- Compiled binaries (unless necessary)
-- Sensitive information (passwords, API keys)
-- Large datasets or media files (use Git LFS if needed)
+When approaching a new feature:
 
-## Code Review Preparation
-- Ensure each commit tells a clear story
-- Group related changes together
-- Separate formatting changes from logic changes
-- Make sure commit history is clean and readable
+1. Write a simple failing test for a small part of the feature
+2. Implement the bare minimum to make it pass
+3. Run tests to confirm they pass (Green)
+4. Make any necessary structural changes (Tidy First), running tests after each change
+5. Commit structural changes separately
+6. Add another test for the next small increment of functionality
+7. Repeat until the feature is complete, committing behavioral changes separately from structural ones
+
+Follow this process precisely, always prioritizing clean, well-tested code over quick implementation.
+Always write one test at a time, make it run, then improve structure. Always run all the tests (except long-running tests) each time.
+
