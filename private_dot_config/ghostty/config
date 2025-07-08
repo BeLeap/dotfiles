@@ -10,3 +10,5 @@ window-title-font-family = "Cascadia Code NF"
 # Clamped to screen size so below works as maxmized
 window-height = 99999
 window-width = 99999
+
+shell-integration-features = no-title
