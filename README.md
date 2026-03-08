@@ -1,3 +1,5 @@
+not used anymore see https://github.com/BeLeap/nix-configuration
+
 # chezmoi
 
 ```sh
